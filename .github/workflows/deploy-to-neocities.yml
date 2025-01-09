@@ -56,7 +56,7 @@ jobs:
     - name: Run Generator
       run: |
         cd website
-        ./bin/Release/net8.0/StaticHtmlGenerator
+        dotnet bin/Release/net8.0/StaticHtmlGenerator.dll
         cd ..
     
     - name: Deploy to Neocities
