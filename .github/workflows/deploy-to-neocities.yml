@@ -47,9 +47,10 @@ jobs:
     
     - name: Build Generator
       run: |
-        cd static-html-generator
+        cd static-html-generator/src
         dotnet build --configuration Release
         chmod +x ./bin/Release/net8.0/StaticHtmlGenerator
+        cd ..
         cd ..
     
     - name: Run Generator
