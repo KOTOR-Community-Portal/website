@@ -43,7 +43,7 @@ jobs:
     - name: Setup - .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '8.0.x'
+        dotnet-version: '7.0.x'
     
     - name: Build Generator
       run: |
@@ -55,7 +55,7 @@ jobs:
     - name: Run Generator
       run: |
         cd website
-        dotnet bin/Release/net8.0/StaticHtmlGenerator.dll
+        dotnet bin/Release/net7.0/StaticHtmlGenerator.dll
         cd ..
     
     - name: Deploy to Neocities
