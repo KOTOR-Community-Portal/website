@@ -49,6 +49,8 @@ jobs:
       run: |
         cd static-html-generator/src
         dotnet build --configuration Release
+        pwd
+        ls
         cd ..
         cd ..
     
@@ -56,6 +58,8 @@ jobs:
       run: |
         cd website
         dotnet static-html-generator/src/bin/Release/net7.0/StaticHtmlGenerator.dll
+        pwd
+        ls
         cd ..
     
     - name: Deploy to Neocities
