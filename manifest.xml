@@ -18,7 +18,7 @@
 				<page path="news/index.html">
 					<title>News</title>
 					<template>templates/page.html</template>
-					<token name="main"></token>
+					<token name="main">../website-content/content/news.md</token>
 					<token name="extra">templates/construction.html</token>	
 					<token name="icon">datapad.png</token>
 					<token name="disabled">disabled</token>	
