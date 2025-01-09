@@ -15,18 +15,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout: website
+    - name: Checkout - website
       uses: actions/checkout@v4
       with:
         path: website
 
-    - name: Checkout: website-content
+    - name: Checkout - website-content
       uses: actions/checkout@v4
       with:
         repository: KOTOR-Community-Portal/website-content
         path: website-content
     
-    - name: Checkout: mod-builds
+    - name: Checkout - mod-builds
       uses: actions/checkout@v4
       with:
         repository: KOTOR-Community-Portal/mod-builds
@@ -34,13 +34,13 @@ jobs:
     
     # Checkout any additional repositories containing content
     
-    - name: Checkout: static-html-generator
+    - name: Checkout - static-html-generator
       uses: actions/checkout@v4
       with:
         repository: KOTOR-Community-Portal/static-html-generator
         path: static-html-generator
     
-    - name: Setup: .NET
+    - name: Setup - .NET
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
