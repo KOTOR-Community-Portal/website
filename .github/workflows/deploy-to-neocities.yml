@@ -2,6 +2,11 @@ name: Deploy to Neocities
 
 on:
   workflow_dispatch:
+    inputs:
+      cleanup:
+        type: boolean
+        default: false
+        required: true
   push:
     branches:
       - main
@@ -62,7 +67,7 @@ jobs:
       uses: bcomnes/deploy-to-neocities@v3
       with:
         api_key: ${{ secrets.NEOCITIES_API_KEY }}
-        cleanup: false
+        cleanup: ${{ inputs.cleanup }}
         neocities_supporter: false
         preview_before_deploy: true
         dist_dir: website/build
