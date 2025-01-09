@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>  
+<manifest xmlns="https://kotor.neocities.org/v1.0/manifest">
+	<pages>
+		<page path="index.html">
+			<title>Home</title>
+			<template>templates/toplevel_parent_page.html</template>
+			<token name="main">../website-content/content/index.md</token>
+			<token name="extra">templates/construction.html</token>
+			<subpages>
+				<page path="about/index.html">
+					<title>About</title>
+					<template>templates/page.html</template>
+					<token name="main"></token>
+					<token name="extra">templates/construction.html</token>		
+					<token name="icon">computer_panel.png</token>
+					<token name="disabled">disabled</token>
+				</page>
+				<page path="news/index.html">
+					<title>News</title>
+					<template>templates/page.html</template>
+					<token name="main"></token>
+					<token name="extra">templates/construction.html</token>	
+					<token name="icon">datapad.png</token>
+					<token name="disabled">disabled</token>	
+				</page>
+				<page path="modding/index.html">
+					<title>Modding</title>
+					<template>templates/page_insert.html</template>
+					<token name="main">templates/modding_main.html</token>
+					<token name="extra">templates/construction.html</token>		
+					<token name="icon">construction_kit.png</token>
+					<subpages>
+						<page path="modding/download.html">
+							<title>Download Mods</title>
+							<template>templates/short_list_descendant.html</template>
+							<token name="main">../website-content/content/modding/download.md</token>
+							<token name="extra">templates/construction.html</token>
+							<token name="ancestor_path">modding/index.html</token>
+						</page>
+						<page path="modding/mod_builds/index.html">
+							<title>Mod Builds</title>
+							<template>templates/descendant.html</template>
+							<token name="main">../mod-builds/content/index.md</token>
+							<token name="extra">templates/construction.html</token>
+							<token name="ancestor_path">modding/index.html</token>
+							<subpages>
+								<page path="modding/mod_builds/k1/spoiler-free.html">
+									<title>KOTOR 1 Spoiler Free</title>
+									<template>templates/subpage.html</template>
+									<token name="main">../mod-builds/content/k1/spoiler-free.md</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>
+								<page path="modding/mod_builds/k1/full.html">
+									<title>KOTOR 1 Full</title>
+									<template>templates/subpage.html</template>
+									<token name="main">../mod-builds/content/k1/full.md</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>
+								<page path="modding/mod_builds/k1/spoiler-free_mobile.html">
+									<title>KOTOR 1 Spoiler Free (Mobile)</title>
+									<template>templates/subpage.html</template>
+									<token name="main">../mod-builds/content/k1/spoiler-free_mobile.md</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>
+								<page path="modding/mod_builds/k1/full_mobile.html">
+									<title>KOTOR 1 Full (Mobile)</title>
+									<template>templates/subpage.html</template>
+									<token name="main">../mod-builds/content/k1/full_mobile.md</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>
+								<page path="modding/mod_builds/k1/widescreen.html">
+									<title>KOTOR 1 Widescreen</title>
+									<template>templates/descendant.html</template>
+									<token name="main">../mod-builds/content/k1/widescreen.md</token>
+									<token name="ancestor_path">modding/index.html</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>
+								<page path="modding/mod_builds/k1/delete.html">
+									<title>KOTOR 1 Deletion</title>
+									<template>templates/descendant.html</template>
+									<token name="main">../mod-builds/content/k1/delete.md</token>
+									<token name="extra">templates/construction.html</token>	
+									<token name="ancestor_path">modding/index.html</token>
+								</page>
+								<page path="modding/mod_builds/k1/android.html">
+									<title>KOTOR 1 Android</title>
+									<template>templates/descendant.html</template>
+									<token name="main">../mod-builds/content/k1/android.md</token>
+									<token name="ancestor_path">modding/index.html</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>
+								<page path="modding/mod_builds/k1/ios.html">
+									<title>KOTOR 1 iOS</title>
+									<template>templates/descendant.html</template>
+									<token name="main">../mod-builds/content/k1/ios.md</token>
+									<token name="ancestor_path">modding/index.html</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>
+								<page path="modding/mod_builds/k2/spoiler-free.html">
+									<title>KOTOR 2 Spoiler-Free</title>
+									<template>templates/subpage.html</template>
+									<token name="main">../mod-builds/content/k2/spoiler-free.md</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>				
+								<page path="modding/mod_builds/k2/full.html">
+									<title>KOTOR 2 Full</title>
+									<template>templates/subpage.html</template>
+									<token name="main">../mod-builds/content/k2/full.md</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>
+								<page path="modding/mod_builds/k2/spoiler-free_mobile.html">
+									<title>KOTOR 2 Spoiler-Free (Mobile)</title>
+									<template>templates/subpage.html</template>
+									<token name="main">../mod-builds/content/k2/spoiler-free_mobile.md</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>
+								<page path="modding/mod_builds/k2/full_mobile.html">
+									<title>KOTOR 2 Full (Mobile)</title>
+									<template>templates/subpage.html</template>
+									<token name="main">../mod-builds/content/k2/full_mobile.md</token>
+									<token name="extra">templates/construction.html</token>	
+								</page>
+								<page path="modding/mod_builds/k2/widescreen.html">
+									<title>KOTOR 2 Widescreen</title>
+									<template>templates/descendant.html</template>
+									<token name="main">../mod-builds/content/k2/widescreen.md</token>
+									<token name="extra">templates/construction.html</token>	
+									<token name="ancestor_path">modding/index.html</token>
+								</page>
+								<page path="modding/mod_builds/k2/delete.html">
+									<title>KOTOR 2 Deletion</title>
+									<template>templates/descendant.html</template>
+									<token name="main">../mod-builds/content/k2/delete.md</token>
+									<token name="extra">templates/construction.html</token>	
+									<token name="ancestor_path">modding/index.html</token>
+								</page>
+								<page path="modding/mod_builds/faq.html">
+									<title>FAQ</title>
+									<template>templates/descendant.html</template>
+									<token name="main">../mod-builds/content/faq.md</token>
+									<token name="extra">templates/construction.html</token>	
+									<token name="ancestor_path">modding/index.html</token>
+								</page>
+								<page path="modding/mod_builds/why_use.html">
+									<title>Why Use?</title>
+									<template>templates/descendant.html</template>
+									<token name="main">../mod-builds/content/why_use.md</token>
+									<token name="extra">templates/construction.html</token>	
+									<token name="ancestor_path">modding/index.html</token>
+								</page>
+								<page path="modding/mod_builds/changelog.html">
+									<title>Changelog</title>
+									<template>templates/descendant.html</template>
+									<token name="main">../mod-builds/content/changelog.md</token>
+									<token name="extra">templates/construction.html</token>
+									<token name="ancestor_path">modding/index.html</token>
+								</page>
+								<page path="modding/mod_builds/macos.html">
+									<title>Modding KOTOR on MacOS</title>
+									<template>templates/subpage.html</template>
+									<token name="main">../mod-builds/content/macos.md</token>
+									<token name="extra">templates/construction.html</token>
+								</page>
+							</subpages>
+						</page>
+					</subpages>
+				</page>
+				<page path="buy_the_games/index.html">
+					<title>Buy the Games</title>
+					<template>templates/page.html</template>
+					<token name="main">../website-content/content/buy_the_games.md</token>
+					<token name="extra">templates/construction.html</token>
+					<token name="icon">credits.png</token>
+				</page>
+				<page path="links/index.html">
+					<title>Useful Links</title>
+					<template>templates/page.html</template>
+					<token name="main"></token>
+					<token name="extra">templates/construction.html</token>
+					<token name="icon">security_spike.png</token>
+					<token name="disabled">disabled</token>
+				</page>
+				<page path="faq/index.html">
+					<title>FAQ</title>
+					<template>templates/selection_page.html</template>
+					<token name="main">../website-content/content/faq/index.md</token>
+					<token name="extra">templates/construction.html</token>
+					<token name="icon">protocol_droid.png</token>
+					<subpages>
+						<page path="faq/general.html">
+							<title>General Questions</title>
+							<template>templates/subpage.html</template>
+							<token name="main">../website-content/content/faq/general.md</token>
+							<token name="extra">templates/construction.html</token>
+						</page>
+						<page path="faq/lore.html">
+							<title>Lore Questions</title>
+							<template>templates/subpage.html</template>
+							<token name="main">../website-content/content/faq/lore.md</token>
+							<token name="extra">templates/construction.html</token>
+						</page>
+						<page path="faq/k1.html">
+							<title>KOTOR 1</title>
+							<template>templates/subpage.html</template>
+							<token name="main">../website-content/content/faq/k1.md</token>
+							<token name="extra">templates/construction.html</token>
+						</page>
+						<page path="faq/k1_quickstart.html">
+							<title>KOTOR 1 Quickstart</title>
+							<template>templates/subpage.html</template>
+							<token name="main">../website-content/content/faq/k1_quickstart.md</token>
+							<token name="extra">templates/construction.html</token>
+						</page>
+						<page path="faq/k2.html">
+							<title>KOTOR 2</title>
+							<template>templates/subpage.html</template>
+							<token name="main">../website-content/content/faq/k2.md</token>
+							<token name="extra">templates/construction.html</token>
+						</page>
+						<page path="faq/k2_quickstart.html">
+							<title>KOTOR 2 Quickstart</title>
+							<template>templates/subpage.html</template>
+							<token name="main">../website-content/content/faq/k2_quickstart.md</token>
+							<token name="extra">templates/construction.html</token>
+						</page>
+					</subpages>
+				</page>
+			</subpages>			
+		</page>
+	</pages>
+</manifest>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>  
+<xs:schema id="manifest"
+		   targetNamespace="https://kotor.neocities.org/v1.0/manifest"
+		   xmlns="https://kotor.neocities.org/v1.0/manifest"
+		   xmlns:tns="https://kotor.neocities.org/v1.0/manifest"
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		   elementFormDefault="qualified">
+	<xs:complexType name="token">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="page">
+		<xs:sequence>
+			<xs:element name="title" type="xs:string"/>
+			<xs:element name="template" type="xs:string"/>
+			<xs:element name="token" type="token" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="subpages" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="page" type="page" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="path" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:element name="manifest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="pages">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="page" type="page" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="unique-path">
+						<xs:selector xpath=".//tns:page"/>
+						<xs:field xpath="@path"/>
+					</xs:unique>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

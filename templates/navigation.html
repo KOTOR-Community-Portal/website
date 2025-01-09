@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Navigation</title>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"/>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+		<link rel="stylesheet" type="text/css" href="../public/styles.css"/>
+		<script src="../public/scripts.js"></script>
+		<script src="scripts.js"></script>
+	</head>
+	<body>
+		<div id="nav-button" class="br-smooth br-round-et color-2 bg-2-light mx-3 mt-3 mb-0 px-1 py-2" type="button" data-bs-toggle="collapse" data-bs-target="#nav-collapse" aria-expanded="false" aria-controls="nav-collapse">
+			<div class="d-flex align-middle-center p-1"><h1>Navigation</h1></div>
+		</div>
+		<div id="nav-collapse" class="inventory collapse br-smooth bg-1-dark color-1 nolink mx-3 mt-1 mb-0 p-2">
+			<ul class="nav bg-none flex-column">
+				<li class="nav-item my-2">
+					<a class="nav-link align-items-center px-0 _DISABLED_" href="_PATH_">
+						<img src="_ICON_" alt="'_TITLE_' icon" width="32" height="36"/>
+						<div class="d-flex align-items-center p-2">_TITLE_</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script>loadNavigation()</script>
+	</body>
+</html>
