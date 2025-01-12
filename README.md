@@ -3,7 +3,7 @@ This repository contains the build system for the KOTOR Community Portal website
 
 The toolchain has only been built for Windows at this time.
 
-# Setup
+## Setup
 1. Download a copy of this repository ([website](https://github.com/KOTOR-Community-Portal/website)) and any repositories with content you will be working with (e.g. [website-content](https://github.com/KOTOR-Community-Portal/website)) to your local machine.
    - It is recommended that you [clone a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) with [GitHub Desktop](https://desktop.github.com/download/) or a similar tool, as that will allow you to sync with changes made to the repository and commit changes yourself. You can also download the repository as a `.zip` archive, then extract the contents; however, you would need to do this again whenever a repository is changed in order to stay up to date with its content.
    - Make sure to pull changes with Git or download a fresh copy of the repository whenever someone makes changes.
@@ -35,7 +35,7 @@ website-content/
 ├─ ...
 ```
 
-# Build
+## Build
 You can build a copy of the website on your local machine by running the `build.bat`script, which launches the Static HTML Generator with the correct configuration.
 
 Roughly, this is how the Static HTML Generator works:
@@ -46,7 +46,7 @@ Roughly, this is how the Static HTML Generator works:
 
 You will need to run `build.bat` again whenever you make or pull changes to the website content.
 
-# Preview
+## Preview
 You can preview the website on your local machine by running the `serve.bat` script, which launches the Local Web Server with the correct configuration.
 
 Normally, when you visit a website, you are requesting that the machine at that address serve webpages to your browser. localhost is a special address which represents your own machine. Our Local Web Server mimics the behavior of Neocities' web server, but serves pages from localhost, so the files are read from your own machine. This makes it possible to to edit the website on your local machine and preview the changes before deploying them to Neocities.
@@ -55,12 +55,12 @@ After running `serve.bat`, ctrl+click on the link in the console to view the web
 
 You can keep the server running while you are making changes; you don't need to restart it. You may need to clear your browser's cache to view your changes, however.
 
-# Contribute
+## Contribute
 When you have finished making changes on your local machine, you will need to commit them to the repository so everyone else can see them. See our [Contributing Guide](https://github.com/KOTOR-Community-Portal/website-content/blob/-/CONTRIBUTING.md#making-changes) for how to make changes.
 
 You may also want to check our [Writing Guide](https://github.com/KOTOR-Community-Portal/website-content/blob/-/WRITING.md) for information about the Markdown format and best practices.
 
-# Deploy
+## Deploy
 This repository contains a workflow which automatically builds and deploys the website whenever changes are made to the `main` branch. The workflow can also be run manually by contributors to this repository.
 
 1. Go to the [Deploy to Neocities workflow](https://github.com/KOTOR-Community-Portal/website/actions/workflows/deploy-to-neocities.yml).
