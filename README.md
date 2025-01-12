@@ -78,7 +78,7 @@ Roughly, this is what the workflow does:
 
 Step 1 needs to be updated if the repisitory structure changes, such as if repositories for new types of content are created.
 
-The Static HTML Generator used in Step 2 is a .NET application. Code is checked out from the `main` branch of the [static-html-generator](https://github.com/KOTOR-Community-Portal/static-html-generator) repository. This step builds the code from source and does __not__ download a release. This step should not fail unless a breaking change is made to this repository or there is some unforeseeable .NET issue.
+The Static HTML Generator used in Step 2 is a .NET application. Code is checked out from the `main` branch of the [static-html-generator](https://github.com/KOTOR-Community-Portal/static-html-generator) repository. This step builds the code from source and does __not__ download a release. This step should not fail unless a breaking change is made to the associated repository or there is some unforeseeable .NET issue.
 
 A third-party workflow, [Deploy to Neocities](https://github.com/bcomnes/deploy-to-neocities), is used in Step 3. This step could potentially go wrong for reasons beyond our control if that workflow has an issue. Our workflow might also fail if Neocities is down or if Neocities rate limits our requests.
 
