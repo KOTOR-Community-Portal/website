@@ -3,3 +3,6 @@ bin/*
 
 # Build files
 build/*
+
+# Logs
+logs/*
