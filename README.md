@@ -1,6 +1,8 @@
 # KOTOR Community Portal Website
 This repository contains the build system for the KOTOR Community Portal website which is located at https://kotor.neocities.org/. This document will go over the process for building the website and deploying to Neocities, including how to preview the website on your local machine.
 
+The toolchain has only been built for Windows at this time.
+
 # Setup
 1. Download a copy of this repository ([website](https://github.com/KOTOR-Community-Portal/website)) and any repositories with content you will be working with (e.g. [website-content](https://github.com/KOTOR-Community-Portal/website)) to your local machine.
    - It is recommended that you [clone a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) with [GitHub Desktop](https://desktop.github.com/download/) or a similar tool, as that will allow you to sync with changes made to the repository and commit changes yourself. You can also download the repository as a `.zip` archive, then extract the contents; however, you would need to do this again whenever a repository is changed in order to stay up to date with its content.
