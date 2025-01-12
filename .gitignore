@@ -1,0 +1,8 @@
+# Dev tools
+bin/*
+
+# Build files
+build/*
+
+# Logs
+logs/*

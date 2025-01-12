@@ -1,0 +1,76 @@
+name: Deploy to Neocities
+
+on:
+  workflow_dispatch:
+    inputs:
+      cleanup:
+        type: boolean
+        default: false
+        required: true
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: deploy-to-neocities
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout - website
+      uses: actions/checkout@v4
+      with:
+        path: website
+
+    - name: Checkout - website-content
+      uses: actions/checkout@v4
+      with:
+        repository: KOTOR-Community-Portal/website-content
+        path: website-content
+        ref: main
+    
+    - name: Checkout - mod-builds
+      uses: actions/checkout@v4
+      with:
+        repository: KOTOR-Community-Portal/mod-builds
+        path: mod-builds
+        ref: main
+    
+    # Checkout any additional repositories containing content
+    
+    - name: Checkout - static-html-generator
+      uses: actions/checkout@v4
+      with:
+        repository: KOTOR-Community-Portal/static-html-generator
+        path: static-html-generator
+        ref: main
+    
+    - name: Setup - .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '7.0.x'
+    
+    - name: Build Generator
+      run: |
+        cd static-html-generator/src
+        dotnet build --configuration Release
+        cd ..
+        cd ..
+    
+    - name: Run Generator
+      run: |
+        cd website
+        dotnet ../static-html-generator/src/bin/Release/net7.0/StaticHtmlGenerator.dll
+        cd ..
+    
+    - name: Deploy to Neocities
+      uses: bcomnes/deploy-to-neocities@v3
+      with:
+        api_key: ${{ secrets.NEOCITIES_API_KEY }}
+        cleanup: ${{ inputs.cleanup }}
+        neocities_supporter: false
+        preview_before_deploy: true
+        dist_dir: website/build
