@@ -82,6 +82,6 @@ The Static HTML Generator used in Step 2 is a .NET application. Code is checked 
 
 A third-party workflow, [Deploy to Neocities](https://github.com/bcomnes/deploy-to-neocities), is used in Step 3. This step could potentially go wrong for reasons beyond our control if that workflow has an issue. Our workflow might also fail if Neocities is down or if Neocities rate limits our requests.
 
-The request to deploy Neocities requires an API key which is stored as a secret on this repository. The value of a secret is not visible on GitHub, so only someone with access to the `kotor.neocities.org` account can see what it is. This account can also generat a new API key, invalidating the old one. In such an event, the GitHub secret will need to be updated for the workflow to be able to run successfully.
+The request to deploy Neocities requires an API key which is stored as a secret on this repository. The value of a secret is not visible on GitHub, so only someone with access to the `kotor.neocities.org` account can see what it is. This account can also generat a new API key, invalidating the old one. In such an event, the GitHub secret `NEOCITIES_API_KEY` will need to be updated for the workflow to be able to run successfully.
 
 GitHub generates extensive logs which may help in the event that something goes wrong and the problem is not one of the ones mentioned above.
