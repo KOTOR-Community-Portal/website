@@ -51,7 +51,7 @@ You can preview the website on your local machine by running the `serve.bat` scr
 
 Normally, when you visit a website, you are requesting that the machine at that address serve webpages to your browser. localhost is a special address which represents your own machine. Our Local Web Server mimics the behavior of Neocities' web server, but serves pages from localhost, so the files are read from your own machine. This makes it possible to to edit the website on your local machine and preview the changes before deploying them to Neocities.
 
-After running `serve.bat`, ctrl+click on the link in the console to view the website in your browser.
+After running `serve.bat`, ctrl+click on the link in the console to view the website in your browser or go to http://localhost:8000/. Note that the port number may be different for you.
 
 You can keep the server running while you are making changes; you don't need to restart it. You may need to clear your browser's cache to view your changes, however.
 
@@ -76,12 +76,12 @@ Roughly, this is what the workflow does:
 2. Download, build, and run the Static HTML Generator.
 3. Deploy the built website to Neocities.
 
-Step 1 needs to be updated if the repisitory structure changes, such as if repositories for new types of content are created.
+Step 1 needs to be updated if the repository structure changes, such as if repositories for new types of content are created.
 
 The Static HTML Generator used in Step 2 is a .NET application. Code is checked out from the `main` branch of the [static-html-generator](https://github.com/KOTOR-Community-Portal/static-html-generator) repository. This step builds the code from source and does __not__ download a release. This step should not fail unless a breaking change is made to the associated repository or there is some unforeseeable .NET issue.
 
 A third-party workflow, [Deploy to Neocities](https://github.com/bcomnes/deploy-to-neocities), is used in Step 3. This step could potentially go wrong for reasons beyond our control if that workflow has an issue. Our workflow might also fail if Neocities is down or if Neocities rate limits our requests.
 
-The request to deploy Neocities requires an API key which is stored as a secret on this repository. The value of a secret is not visible on GitHub, so only someone with access to the `kotor.neocities.org` account can see what it is. This account can also generat a new API key, invalidating the old one. In such an event, the GitHub secret `NEOCITIES_API_KEY` will need to be updated for the workflow to be able to run successfully.
+The request to deploy Neocities requires an API key which is stored as a secret on this repository. The value of a secret is not visible on GitHub, so only someone with access to the `kotor.neocities.org` account can see what it is. This account can also generate a new API key, invalidating the old one. In such an event, the GitHub secret `NEOCITIES_API_KEY` will need to be updated for the workflow to be able to run successfully.
 
 GitHub generates extensive logs which may help in the event that something goes wrong and the problem is not one of the ones mentioned above.
