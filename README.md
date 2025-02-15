@@ -4,11 +4,11 @@ This repository contains the build system for the KOTOR Community Portal website
 The toolchain has only been built for Windows at this time.
 
 ## Setup
-1. Download a copy of this repository ([website](https://github.com/KOTOR-Community-Portal/website)) and any repositories with content you will be working with (e.g. [website-content](https://github.com/KOTOR-Community-Portal/website)) to your local machine.
+1. Download a copy of this repository ([website](https://github.com/KOTOR-Community-Portal/website)), and any repositories with content you will be working with (e.g. [website-content](https://github.com/KOTOR-Community-Portal/website-content)).
    - It is recommended that you [clone a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) with [GitHub Desktop](https://desktop.github.com/download/) or a similar tool, as that will allow you to sync with changes made to the repository and commit changes yourself. You can also download the repository as a `.zip` archive, then extract the contents; however, you would need to do this again whenever a repository is changed in order to stay up to date with its content.
    - Make sure to pull changes with Git or download a fresh copy of the repository whenever someone makes changes.
    - Each repository needs to be saved to its own folder with the same name as the repository, and the repository folders need to be placed in the same location on your local machine. 
-   - You do not need to download all of the content from all of the repositories. The build toolchain will log errors for any missing pages and you will not be able to view those pages, but you will be able to view the pages for the content you downloaded.
+   - You do not need to download all of the content from all of the repositories. The build toolchain will log errors for any missing pages and you will not be able to view those pages, but you will be able to view the pages for the content you downloaded. [website-content](https://github.com/KOTOR-Community-Portal/website-content) must be included in order for the website's homepage and other critical pages to be built.
 3. In your `website` folder, create a folder named `bin`.
    - This folder is not tracked on GitHub. Anything you place here will not be committed to the `website` repository, so you will have to manage the contents of this folder yourself.
 4. Get [the latest release of our Static HTML Generator](https://github.com/KOTOR-Community-Portal/static-html-generator/releases/latest). Download the file `StaticHtmlGenerator.exe` and place the file in `website/bin`.
@@ -51,7 +51,7 @@ You can preview the website on your local machine by running the `serve.bat` scr
 
 Normally, when you visit a website, you are requesting that the machine at that address serve webpages to your browser. localhost is a special address which represents your own machine. Our Local Web Server mimics the behavior of Neocities' web server, but serves pages from localhost, so the files are read from your own machine. This makes it possible to to edit the website on your local machine and preview the changes before deploying them to Neocities.
 
-After running `serve.bat`, ctrl+click on the link in the console to view the website in your browser or go to http://localhost:8000/. Note that the port number may be different for you.
+After running `serve.bat`, ctrl+click on the link in the console to view the website in your browser or go to http://localhost:8000/. This replaces the https://localkotor.neocities.org/ part of a URL while the website is being hosted on your local macine. Note that the port number may be different for you.
 
 You can keep the server running while you are making changes; you don't need to restart it. You may need to clear your browser's cache to view your changes, however.
 
