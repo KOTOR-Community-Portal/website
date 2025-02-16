@@ -51,7 +51,7 @@ You can preview the website on your local machine by running the `serve.bat` scr
 
 Normally, when you visit a website, you are requesting that the machine at that address serve webpages to your browser. localhost is a special address which represents your own machine. Our Local Web Server mimics the behavior of Neocities' web server, but serves pages from localhost, so the files are read from your own machine. This makes it possible to to edit the website on your local machine and preview the changes before deploying them to Neocities.
 
-After running `serve.bat`, ctrl+click on the link in the console to view the website in your browser or go to http://localhost:8000/. This replaces the https://kotor.neocities.org/ part of a URL while the website is being hosted on your local macine. Note that the port number may be different for you.
+After running `serve.bat`, ctrl+click on the link in the console to view the website in your browser or go to http://localhost:8000/. This replaces the https://kotor.neocities.org/ part of a URL while the website is being hosted on your local machine. Note that the port number may be different for you.
 
 You can keep the server running while you are making changes; you don't need to restart it. You may need to clear your browser's cache to view your changes, however.
 
