@@ -49,7 +49,7 @@ You will need to run `build.bat` again whenever you make or pull changes to the 
 ## Preview
 You can preview the website on your local machine by running the `serve.bat` script, which launches the Local Web Server with the correct configuration.
 
-Normally, when you visit a website, you are requesting that the machine at that address serve webpages to your browser. localhost is a special address which represents your own machine. Our Local Web Server mimics the behavior of Neocities' web server, but serves pages from localhost, so the files are read from your own machine. This makes it possible to to edit the website on your local machine and preview the changes before deploying them to Neocities.
+Normally, when you visit a website, you are requesting that the machine at that address serve webpages to your browser. localhost is a special address which represents your own machine. Our Local Web Server mimics the behavior of Neocities' web server, but serves pages from localhost, so the files are read from your own machine. This makes it possible to to edit the website on your local machine and preview the changes before they are deployed to Neocities.
 
 After running `serve.bat`, ctrl+click on the link in the console to view the website in your browser or go to http://localhost:8000/. This replaces the https://kotor.neocities.org/ part of a URL while the website is being hosted on your local machine. Note that the port number may be different for you.
 
@@ -82,6 +82,6 @@ The Static HTML Generator used in Step 2 is a .NET application. Code is checked 
 
 A third-party workflow, [Deploy to Neocities](https://github.com/bcomnes/deploy-to-neocities), is used in Step 3. This step could potentially go wrong for reasons beyond our control if that workflow has an issue. Our workflow might also fail if Neocities is down or if Neocities rate limits our requests.
 
-The request to deploy Neocities requires an API key which is stored as a secret on this repository. The value of a secret is not visible on GitHub, so only someone with access to the `kotor.neocities.org` account can see what it is. This account can also generate a new API key, invalidating the old one. In such an event, the GitHub secret `NEOCITIES_API_KEY` will need to be updated for the workflow to be able to run successfully.
+The request to deploy to Neocities requires an API key which is stored as a secret on this repository. The value of a secret is not visible on GitHub, so only someone with access to the `kotor.neocities.org` account can see what it is. This account can also generate a new API key, invalidating the old one. In such an event, the GitHub secret `NEOCITIES_API_KEY` will need to be updated for the workflow to be able to run successfully.
 
 GitHub generates extensive logs which may help in the event that something goes wrong and the problem is not one of the ones mentioned above.
