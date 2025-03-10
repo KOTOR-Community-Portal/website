@@ -25,14 +25,14 @@
 				</page>
 				<page path="modding/index.html">
 					<title>Modding</title>
-					<template>templates/page_insert.html</template>
-					<token name="main">templates/modding_main.html</token>
+					<template>templates/selection_page.html</template>
+					<token name="main">../website-content/content/modding/index.md</token>
 					<token name="extra">../website-content/content/extra.md</token>	
 					<token name="icon">construction_kit.png</token>
 					<subpages>
-						<page path="modding/download.html">
-							<title>Download Mods</title>
-							<template>templates/short_list_descendant.html</template>
+						<page path="modding/download/index.html">
+							<title>Where to Download Mods</title>
+							<template>templates/descendant.html</template>
 							<token name="main">../website-content/content/modding/download.md</token>
 							<token name="extra">../website-content/content/extra.md</token>
 							<token name="ancestor_path">modding/index.html</token>
@@ -175,10 +175,9 @@
 				<page path="links/index.html">
 					<title>Useful Links</title>
 					<template>templates/page.html</template>
-					<token name="main"></token>
+					<token name="main">../website-content/content/links.md</token>
 					<token name="extra">../website-content/content/extra.md</token>
 					<token name="icon">security_spike.png</token>
-					<token name="disabled">disabled</token>
 				</page>
 				<page path="faq/index.html">
 					<title>FAQ</title>
