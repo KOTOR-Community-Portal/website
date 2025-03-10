@@ -8,12 +8,18 @@
 	--alignment-dark: #fd0426;
 	--alignment-light: #0bd4fc;
 	--alignment-neutral: #433d4d;
+	--banner-height: 128px;
 	--ff-serif: "Times New Roman", "Times", serif;
 	--ff-sans-serif: "Arial", "Helvetica", sans-serif;
 	--ff-gothic: "Michroma", "Lucida Console", "Courier New", monospace;
-	--banner-height: 128px;
-	--menubar-height: 64px;
 	--header-height: calc(var(--banner-height) + var(--menubar-height));
+	--menubar-height: 64px;
+	--note-bg: #332402;
+	--note-primary-color: #f3a600;
+	--note-secondary-color: #faf3d8;
+	--warning-bg: #330306;
+	--warning-primary-color: #b61825;
+	--warning-secondary-color: #f8d1cc
 }
 :root,
 :root.kotor1 {
@@ -1014,4 +1020,44 @@ table.selection a,
 table.selection td {
 	width: 160px;
 	height: 160px;
+}
+
+.warning {
+	background-color: var(--warning-bg);
+	border-color: var(--warning-primary-color);
+	border-left-style: solid;
+	border-radius: 4px;
+	border-width: 12px;
+	color: var(--warning-primary-color);
+	padding-left: 24px;
+	padding-right: 8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-bottom: 12px;
+}
+.warning dd {
+	color: var(--warning-secondary-color);
+}
+
+.note {
+	background-color: var(--note-bg);
+	border-color: var(--note-primary-color);
+	border-left-style: solid;
+	border-radius: 4px;
+	border-width: 12px;
+	color: var(--note-primary-color);
+	padding-left: 24px;
+	padding-right: 8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin-bottom: 12px;
+}
+.note dd {
+	color: var(--note-secondary-color);
+}
+
+
+.warning dl,
+.note dl {
+	margin: 0;
 }
