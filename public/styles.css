@@ -853,7 +853,8 @@ code[class*="color-"],
 
 .toc li {
 	line-height: 1rem;
-	margin-bottom: 0.5rem;
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
 }
 
 table {
