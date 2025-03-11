@@ -851,6 +851,11 @@ code[class*="color-"],
 	border-left-style: solid;
 }
 
+.toc li {
+	line-height: 1rem;
+	margin-bottom: 0.5rem;
+}
+
 table {
 	background-color: black;
 	border-style: solid;
