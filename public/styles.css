@@ -1062,8 +1062,11 @@ table.selection td {
 	color: var(--note-secondary-color);
 }
 
-
 .warning dl,
-.note dl {
+.warning dd,
+.warning dd *:last-child,
+.note dl,
+.note dd,
+.note dd *:last-child {
 	margin: 0;
 }
