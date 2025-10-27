@@ -1,0 +1,171 @@
+{
+    "conditions": {
+        "days": {
+            "ace_day": {
+                "month": 4,
+                "day": 6
+            },
+            "barlo": {
+                "month": 11,
+                "day": 2
+            },
+            "bi_vis": {
+                "month": 9,
+                "day": 23
+            },
+            "coming_out": {
+                "month": 10,
+                "day": 11
+            },
+            "idahobit": {
+                "month": 5,
+                "day": 17
+            },
+            "intersex": {
+                "month": 10,
+                "day": 26
+            },
+            "lesbian_day": {
+                "month": 10,
+                "day": 8
+            },
+            "lesbian_vis": {
+                "month": 4,
+                "day": 26
+            },
+            "nb": {
+                "month": 7,
+                "day": 14
+            },
+            "pan_vis": {
+                "month": 5,
+                "day": 24
+            },
+            "pink": {
+                "month": 4,
+                "weekday": 3,
+                "n": 2
+            },
+            "trans_vis": {
+                "month": 3,
+                "day": 31
+            },
+            "women": {
+                "month": 3,
+                "day": 8
+            },
+            "zero_discrim": {
+                "month": 3,
+                "day": 1
+            }
+        },
+        "weeks": {
+            "ace_week": {
+                "month": 10,
+                "week": "last"
+            },
+            "genderfluid_vis": {
+                "month": 10,
+                "start_day": 17,
+                "end_day": 24
+            }
+        },
+        "months": {
+            "pride_month": {
+                "month": 6
+            }
+        }
+    },
+    "data": {
+        "standard": {
+            "name": "",
+            "banner": "alignment",
+            "blurb": "Your gateway to <em>Star Wars: Knights of the Old Republic</em>"
+        },
+        "ace_day": {
+            "name": "International Asexuality Day",
+            "banner": "flag-ace",
+            "blurb": "Today is <a href='https://internationalasexualityday.org/en'>International Asexuality Day</a>"
+        },
+        "ace_week": {
+            "name": "Ace Week",
+            "banner": "flag-ace",
+            "blurb": "This week is <a href='https://www.grlgbtqhealthcareconsortium.org/significantdates/ace-week-2-9yn46'>Ace Week</a>"
+        },
+        "barlo": {
+            "name": "Bee Day",
+            "banner": "flag-barlo",
+            "blurb": "<div title='KAAAAAAAAAAANNN' style='font-variant: normal;'>(*^ω^*)</div>"
+        },
+        "bi_vis": {
+            "name": "Bi Visibility Day",
+            "banner": "flag-bi",
+            "blurb": "Today is <a href='https://bivisibilityday.com/about'>Bi Visibility Day</a>"
+        },
+        "coming_out": {
+            "name": "National Coming Out Day",
+            "banner": "flag-rainbow",
+            "blurb": "Today is <a href='https://www.hrc.org/resources/national-coming-out-day'>National Coming Out Day</a>"
+        },
+        "genderfluid_vis": {
+            "name": "Genderfluid Visibility Week",
+            "banner": "flag-genderfluid",
+            "blurb": "This week is <a href='https://www.grlgbtqhealthcareconsortium.org/significantdates/genderfluid-visibility-week-x3mla'>Genderfluid Visibility Week</a>"
+        },
+        "idahobit": {
+            "name": "International Day Against Homophobia, Biphobia and Transphobia",
+            "banner": "flag-progress",
+            "blurb": "Today is <a href='https://may17.org'>IDAHOBIT</a></span>"
+        },
+        "intersex": {
+            "name": "Intersex Awareness Day",
+            "banner": "flag-intersex",
+            "blurb": "Today is <a href='https://interactadvocates.org/intersex-awareness-day'>Intersex Awareness Day</a>"
+        },
+        "lesbian_day": {
+            "name": "International Lesbian Day",
+            "banner": "flag-lesbian",
+            "blurb": "Today is <a href='https://www.lgbtiqhealth.org.au/international_lesbian_day2'>International Lesbian Day</a>"
+        },
+        "lesbian_vis": {
+            "name": "Lesbian Visibility Day",
+            "banner": "flag-lesbian",
+            "blurb": "Today is <a href='https://www.lesbianvisibilityweek.com'>Lesbian Visibility Day</a>"
+        },
+        "nb": {
+            "name": "Non-Binary People's Day",
+            "banner": "flag-non-binary",
+            "blurb": "Today is <a href='https://www.manygendersonevoice.org/non-binary-peoples-day.html'>Non-Binary People's Day</a>"
+        },
+        "pan_vis": {
+            "name": "Pansexual and Panromantic Awareness & Visibility Day",
+            "banner": "flag-pan",
+            "blurb": "Today is <a href='https://bivisibilityday.com/pan'>Pansexual and Panromantic Visibility Day</a>"
+        },
+        "pink": {
+            "name": "International Day of Pink",
+            "banner": "flag-pink",
+            "blurb": "Today is <a href='https://www.dayofpink.org'>International Day of Pink</a>"
+        },
+        "pride_month": {
+            "name": "Pride Month",
+            "banner": "flag-progress",
+            "blurb": "Celebrating <a href='https://www.loc.gov/lgbt-pride-month/about'>Pride Month</a>"
+        },
+        "trans_vis": {
+            "name": "Trans Day of Visibility",
+            "banner": "flag-trans",
+            "blurb": "Today is <a href='https://www.manygendersonevoice.org/tdov.html'>Trans Day of Visibility</a>"
+        },
+        "women": {
+            "name": "International Women's Day",
+            "banner": "alignment-venus",
+            "blurb": "Today is <a href='https://www.internationalwomensday.com'>International Women's Day</a>"
+        },
+        "zero_discrim": {
+            "name": "Zero Discrimination Day",
+            "banner": "flag-progress",
+            "blurb": "Today is <a href='https://www.unaids.org/en/zero-discrimination-day'>Zero Discrimination Day</a>"
+        }
+    }
+}
