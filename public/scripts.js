@@ -5,6 +5,36 @@ const BREAKPOINT_XS  = 0,
 	  BREAKPOINT_XL  = 1200,
 	  BREAKPOINT_XXL = 1400;
 
+function checkDay(date, condition) {
+	const month = date.getMonth() + 1;
+	const day = date.getDate();
+	if (Number.isInteger(condition.day))
+		return month === condition.month && day === condition.day;
+	if (Number.isInteger(condition.weekday) && Number.isInteger(condition.n))
+		return month === condition.month && day === getWeekdayInMonth(date, condition.weekday, condition.n).getDate();
+	return false;
+}
+
+function checkMonth(date, condition) {
+	const month = date.getMonth() + 1;
+	return Number.isInteger(condition.month)
+		&& condition.month == month;
+}
+
+function checkWeek(date, condition) {
+	const month = date.getMonth() + 1;
+	const day = date.getDate();
+	if (Number.isInteger(condition.start_day) && Number.isInteger(condition.end_day))
+		return month === condition.month && day >= condition.start_day && day <= condition.end_day;
+	if (condition.week === "first")
+		return month === condition.month && isWithinWeek(date, getWeekdayInMonth(date, 1, 1));
+	if (condition.week === "last")
+		return month === condition.month && isWithinWeek(date, getStartOfLastWeekInMonth(date));
+	if (Number.isInteger(condition.week))
+		return month === condition.month && isWithinWeek(date, getWeekdayInMonth(date, 1, condition.week));
+	return false;
+}
+
 function collapseMaxWidth(collapsibleSelector, triggerSelector, maxWidth) {
 	const mql = window.matchMedia("(max-width: " + maxWidth + "px)");
 	const collapsible = document.querySelector(collapsibleSelector);
@@ -20,170 +50,87 @@ function collapseMaxWidth(collapsibleSelector, triggerSelector, maxWidth) {
 		trigger.removeAttribute("data-bs-toggle");
 		trigger.removeAttribute("type");
 	}
-	if( !mql.matches )
+	if (!mql.matches)
 		expand();
-	mql.addEventListener("change", e => { if( e.matches ) collapse(); else expand(); });
+	mql.addEventListener("change", e => { if (e.matches) collapse(); else expand(); });
 }
 
-function getBanner(day) {
-	switch( day ) {
-	case "Zero Discrimination Day":
-		return "flag-progress";
-	case "International Women's Day":
-		return "alignment-venus";
-	case "Trans Day of Visibility":
-		return "flag-trans";
-	case "International Asexuality Day":
-		return "flag-ace";
-	case "International Day of Pink":
-		return "flag-pink";
-	case "Lesbian Visibility Day":
-		return "flag-lesbian";
-	case "IDAHOBIT":
-		return "flag-progress";
-	case "Pansexual and Panromantic Awareness & Visibility Day":
-		return "flag-pan";
-	case "Pride Month":
-		return "flag-progress";
-	case "Non-Binary People's Day":
-		return "flag-non-binary";
-	case "Bi Visibility Day":
-		return "flag-bi";
-	case "International Lesbian Day":
-		return "flag-lesbian";
-	case "National Coming Out Day":
-		return "flag-rainbow";
-	case "Genderfluid Visibility Week":
-		return "flag-genderfluid";
-	case "Ace Week":
-		return "flag-ace";
-	case "Intersex Awareness Day":
-		return "flag-intersex";
-	case "Barlo":
-		return "flag-barlo";
-	default:
-		return "alignment";
-	}
-}
-
-function getBlurbHtml(day) {
-	switch( day ) {
-	case "Zero Discrimination Day":
-		return String.raw`Today is <a href="https://www.unaids.org/en/zero-discrimination-day">Zero Discrimination Day</a>`;
-	case "International Women's Day":
-		return String.raw`Today is <a href="https://www.internationalwomensday.com/">International Women's Day</a>`;
-	case "Trans Day of Visibility":
-		return String.raw`Today is <a href="https://www.manygendersonevoice.org/tdov.html">Trans Day of Visibility</a>`;
-	case "International Asexuality Day":
-		return String.raw`Today is <a href="https://internationalasexualityday.org/en">International Asexuality Day</a>`;
-	case "International Day of Pink":
-		return String.raw`Today is <a href="https://www.dayofpink.org/">International Day of Pink</a>`;
-	case "Lesbian Visibility Day":
-		return String.raw`Today is <a href="https://www.lesbianvisibilityweek.com">Lesbian Visibility Day</a>`;
-	case "IDAHOBIT":
-		return String.raw`Today is <a href="https://may17.org">IDAHOBIT</a></span>`;
-	case "Pansexual and Panromantic Awareness & Visibility Day":
-		return String.raw`Today is <a href="https://genderedintelligence.co.uk/panvisibilityday">Pansexual and Panromantic Visibility Day</a>`;
-	case "Pride Month":
-		return String.raw`Celebrating <a href="https://www.loc.gov/lgbt-pride-month/about/">Pride Month</a>`;
-	case "Non-Binary People's Day":
-		return String.raw`Today is <a href="https://www.manygendersonevoice.org/non-binary-peoples-day.html">Non-Binary People's Day</a>`;
-	case "Bi Visibility Day":
-		return String.raw`Today is <a href="https://bivisibilityday.com/about">Bi Visibility Day</a>`;
-	case "International Lesbian Day":
-		return String.raw`Today is <a href="https://www.lgbtiqhealth.org.au/international_lesbian_day2">International Lesbian Day</a>`;
-	case "National Coming Out Day":
-		return String.raw`Today is <a href="https://www.hrc.org/resources/national-coming-out-day">National Coming Out Day</a>`;
-	case "Genderfluid Visibility Week":
-		return String.raw`Today is the start of <a href="https://www.grlgbtqhealthcareconsortium.org/significantdates/genderfluid-visibility-week">Genderfluid Visibility Week</a>`;
-	case "Ace Week":
-		return String.raw`Today is the start of <a href="https://www.grlgbtqhealthcareconsortium.org/significantdates/ace-week">Ace Week</a>`;
-	case "Intersex Awareness Day":
-		return String.raw`Today is <a href="https://interactadvocates.org/intersex-awareness-day">Intersex Awareness Day</a>`;
-	case "Barlo":
-		return String.raw`<div title="KAAAAAAAAAAANNN" style="font-variant: normal;">(*^ω^*)</div>`;
-	default:
-		return String.raw`Your gateway to <em>Star Wars: Knights of the Old Republic</em>`;
-	}
+function determineDay(date, conditions) {
+	let matches = [];
+	for (const key in conditions.days)
+		if (checkDay(date, conditions.days[key]))
+			return key;
+	for (const key in conditions.weeks)
+		if (checkWeek(date, conditions.weeks[key]))
+			return key;
+	for (const key in conditions.months)
+		if (checkMonth(date, conditions.months[key]))
+			return key;
+	return undefined;
 }
 
 function getLocalOrSession(key) {
-	if( typeof(window.localStorage) != "undefined" )
+	if (typeof(window.localStorage) != "undefined")
 		return localStorage[key];
 	else
 		return sessionStorage[key];
 }
 
-function getWeekdayInMonth(weekday, date, n) {
+function getStartOfLastWeekInMonth(date) {
+	const year = date.getFullYear();
+	const month = date.getMonth();
+	var endOfMonth = new Date(date.getTime());
+	endOfMonth.setMonth(month + 1);
+	endOfMonth.setDate(0);
+	const day = endOfMonth.getDate() - 6 - endOfMonth.getDay();
+	return new Date(year, month, day);
+}
+
+function getWeekdayInMonth(date, weekday, n) {
 	var d = new Date(date.getFullYear(), date.getMonth(), 1);
 	d.setDate(1 + (weekday - d.getDay() + 7) % 7 + (n - 1) * 7);
 	return d;
 }
 
-function getToday() {
-	const date = new Date();
-	const month = date.getMonth() + 1;
-	const day = date.getDate();
-	
-	console.log(date);
-	if( month == 3 && day == 1 )
-		return "Zero Discrimination Day";
-	else if( month == 3 && day == 8 )
-		return "International Women's Day"
-	else if( month == 3 && day == 31 )
-		return "Trans Day of Visibility";
-	else if( month == 4 && day == 6 )
-		return "International Asexuality Day";
-	else if( month == 4 && day == getWeekdayInMonth(3, date, 2).getDate() )
-		return "International Day of Pink";
-	else if( month == 4 && day == 26 )
-		return "Lesbian Visibility Day";
-	else if( month == 5 && day == 17 )
-		return "IDAHOBIT";          
-	else if( month == 5 && day == 25 )
-		return "Pansexual and Panromantic Awareness & Visibility Day";
-	else if( month == 6 )
-		return "Pride Month";
-	else if( month == 7 && day == 14 )
-		return "Non-Binary People's Day";
-	else if( month == 9 && day == 23 )
-		return "Bi Visibility Day";
-	else if( month == 10 && day == 8 )
-		return "International Lesbian Day";
-	else if( month == 10 && day == 11 )
-		return "National Coming Out Day";
-	else if( month == 10 && day == 17 )
-		return "Genderfluid Visibility Week";
-	else if( month == 10 && day == 24 )
-		return "Ace Week";
-	else if( month == 10 && day == 26 )
-		return "Intersex Awareness Day";
-	else if( month == 11 && day == 2 )
-		return "Barlo";
-	else
-		return "";
+async function getToday() {
+	const params = new URLSearchParams(window.location.search);
+	const date = parseISODateInLocalTime(params.get("date")) ?? new Date();
+	const json = await fetch("/days.json").then(result => result.json());
+	const { conditions, data } = json;
+	const day = determineDay(date, conditions);
+	return day ? data[day] : data.standard;
+}
+
+function isWithinWeek(date, startOfWeek) {
+	const endOfWeek = new Date(startOfWeek.getFullYear(), startOfWeek.getMonth(), startOfWeek.getDate() + 6);
+	return date >= startOfWeek && date <= endOfWeek;
 }
 
 function loadBanner() {
-	const day = getToday();
-	var banner = $("#banner");
-	if( banner ) {
-		const currentBanner = "alignment";
-		const replacementBanner = getBanner(day);
-		banner.find("*").each(function() {
-			if( $(this).hasClass(currentBanner) ) {
-				$(this).removeClass(currentBanner);
-				$(this).addClass(replacementBanner);
+	getToday()
+		.then(day => {
+			var banner = $("#banner");
+			if (banner) {
+				const currentBanner = "alignment";
+				const replacementBanner = day.banner;
+				banner.find("*").each(function() {
+					if ($(this).hasClass(currentBanner)) {
+						$(this).removeClass(currentBanner);
+						$(this).addClass(replacementBanner);
+					}
+				});
+			
 			}
 		});
-	}
 }
 
 function loadBlurb() {
-	const day = getToday();
-	var blurb = $("#blurb");
-	if( blurb )
-		$(blurb).html(getBlurbHtml(day));
+	getToday()
+		.then(day => {
+			var blurb = $("#blurb");
+			if (blurb)
+				$(blurb).html(day.blurb)
+		});
 }
 
 function loadNavigation() {
@@ -200,6 +147,16 @@ function loadTooltips() {
 	const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 }
 
+function parseISODateInLocalTime(s) {
+	if (!s)
+		return undefined;
+	const res = s.match(/(\d{4})-([0][1-9]|1[0-2])-([0][1-9]|[1-2]\d|3[01])/);
+	if (!res)
+		return undefined;
+	const [_, year, month, day] = res;
+	return new Date(year, month - 1, day);
+}
+
 function setTheme(theme) {
 	var oldTheme = document.documentElement.className;
 	document.documentElement.className = theme;
@@ -209,17 +166,17 @@ function setTheme(theme) {
 }
 
 function setLocalOrSession(key, value) {
-	if( typeof(window.localStorage) != "undefined" )
+	if (typeof(window.localStorage) != "undefined")
 		localStorage[key] = value;
 	else
 		sessionStorage[key]
 }
 
 function spoiler(e) {
-	if( !(e instanceof KeyboardEvent) || e.key == "Enter" ) {
+	if (!(e instanceof KeyboardEvent) || e.key == "Enter") {
 		const btn = e.CurrentTarget;
 		const content = $(e.currentTarget).children(":first");
-		if( $(content).attr("aria-hidden") == "true" ) {
+		if ($(content).attr("aria-hidden") == "true") {
 			$(content).attr("aria-hidden", "false");
 			$(btn).attr("title", "Show spoiler");
 		}
