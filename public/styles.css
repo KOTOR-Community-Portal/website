@@ -220,11 +220,9 @@ br {
 	position: absolute;
 	z-index: 1;
 }
-.banner .flag-overlay {
-	width: calc(1.67 * var(--banner-height));
-}
 .flag-overlay.flag-intersex {
-	background: radial-gradient(circle, transparent 24.5%, #7902aa 25% 34%, transparent 34.5%)
+	background: radial-gradient(circle, transparent 35.5%, #7902aa 36% 49%, transparent 49.5%);
+	width: var(--banner-height);
 }
 .flag-overlay.flag-progress {
 	background:
@@ -234,11 +232,14 @@ br {
 		conic-gradient(at 41% 50%, #0000 221.25deg, #784F17 222deg 318deg, #0000 318.25deg),
 		conic-gradient(at 50% 50%, #0000 221.25deg, #000000 222deg 318deg, #0000 318.25deg);
 	margin-left: -12px;
+	width: calc(1.67 * var(--banner-height));
 }
 .flag-overlay.alignment-venus {
 	background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='12pt' height='12pt' viewBox='0 0 12 12' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style='fill:none;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(35.15%25,0%25,64.85%25);stroke-opacity:1;stroke-miterlimit:10;' d='M 85 85 C 85 98.789062 73.789062 110 60 110 C 46.210938 110 35 98.789062 35 85 C 35 71.210938 46.210938 60 60 60 C 73.789062 60 85 71.210938 85 85 Z M 85 85 ' transform='matrix(0.1,0,0,-0.1,0,12)'/%3E%3Cpath style='fill:none;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(35.15%25,0%25,64.85%25);stroke-opacity:1;stroke-miterlimit:10;' d='M 60 10 L 60 60 ' transform='matrix(0.1,0,0,-0.1,0,12)'/%3E%3Cpath style='fill:none;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(35.15%25,0%25,64.85%25);stroke-opacity:1;stroke-miterlimit:10;' d='M 35 35 L 85 35 ' transform='matrix(0.1,0,0,-0.1,0,12)'/%3E%3C/g%3E%3C/svg%3E");
 	background-repeat: no-repeat;
     background-size: 100% 100%;
+	margin-left: -12px;
+	width: var(--banner-height);
 }
 
 .blurb {
