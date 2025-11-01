@@ -46,6 +46,10 @@
                 "weekday": 3,
                 "n": 2
             },
+			"tdor": {
+				"month": 11,
+				"day": 20
+			},
             "trans_vis": {
                 "month": 3,
                 "day": 31
@@ -68,7 +72,12 @@
                 "month": 10,
                 "start_day": 17,
                 "end_day": 24
-            }
+            },
+			"trans_week": {
+				"month": 11,
+				"start_day": 13,
+				"end_day": 19
+			}
         },
         "months": {
             "pride_month": {
@@ -152,10 +161,20 @@
             "banner": "flag-progress",
             "blurb": "Celebrating <a href='https://www.loc.gov/lgbt-pride-month/about'>Pride Month</a>"
         },
+		"tdor": {
+			"name": "Transgender Day of Remembrance",
+			"banner": "flag-trans",
+            "blurb": "Today is <a href='https://glaad.org/tdor'>Transgender Day of Remembrance</a>"
+		},
         "trans_vis": {
             "name": "Trans Day of Visibility",
             "banner": "flag-trans",
             "blurb": "Today is <a href='https://www.manygendersonevoice.org/tdov.html'>Trans Day of Visibility</a>"
+        },
+        "trans_week": {
+            "name": "Transgender Awareness Week",
+            "banner": "flag-trans",
+            "blurb": "Today is <a href='https://glaad.org/transweek'>Transgender Awareness Week</a>"
         },
         "women": {
             "name": "International Women's Day",
