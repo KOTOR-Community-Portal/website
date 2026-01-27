@@ -97,6 +97,14 @@ br {
 	margin-bottom: 1rem;
 }
 
+blockquote {
+	border-color: var(--primary-border);
+	border-style: none none none solid;
+	border-width: 6px;
+	margin-left: 1rem;
+	padding-left: 1rem;	
+}
+
 .no-gutter {
   margin-right: 0;
   margin-left: 0;
