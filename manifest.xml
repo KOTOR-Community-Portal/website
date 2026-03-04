@@ -70,10 +70,8 @@
 								</page>
 								<page path="modding/mod_builds/k1/widescreen.html">
 									<title>KOTOR 1 Widescreen</title>
-									<template>templates/descendant.html</template>
-									<token name="main">../mod-builds/content/k1/widescreen.md</token>
-									<token name="ancestor_path">modding/index.html</token>
-									<token name="extra">../mod-builds/content/extra.md</token>
+									<template>templates/redirect_page.html</template>
+									<token name="redirect_url">/modding/mod_builds/k1/full#Optional_Widescreen_Extended_Widescreen_Support_Mods</token>
 								</page>
 								<page path="modding/mod_builds/k1/delete.html">
 									<title>KOTOR 1 Deletion</title>
@@ -122,10 +120,8 @@
 								</page>
 								<page path="modding/mod_builds/k2/widescreen.html">
 									<title>KOTOR 2 Widescreen</title>
-									<template>templates/descendant.html</template>
-									<token name="main">../mod-builds/content/k2/widescreen.md</token>
-									<token name="extra">../mod-builds/content/extra.md</token>
-									<token name="ancestor_path">modding/index.html</token>
+									<template>templates/redirect_page.html</template>
+									<token name="redirect_url">/modding/mod_builds/k2/full#Enhanced_Widescreen_Support_Mods</token>
 								</page>
 								<page path="modding/mod_builds/k2/delete.html">
 									<title>KOTOR 2 Deletion</title>
