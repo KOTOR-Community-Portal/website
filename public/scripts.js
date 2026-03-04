@@ -157,6 +157,10 @@ function parseISODateInLocalTime(s) {
 	return new Date(year, month - 1, day);
 }
 
+function redirect(url) {
+	document.location.replace(url);
+}
+
 function setTheme(theme) {
 	var oldTheme = document.documentElement.className;
 	document.documentElement.className = theme;
