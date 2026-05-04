@@ -2,65 +2,70 @@
     "conditions": {
         "days": {
             "ace_day": {
-                "month": 4,
-                "day": 6
+                "day": 6,
+                "month": 4
             },
             "barlo": {
-                "month": 11,
-                "day": 2
+                "day": 2,
+                "month": 11
             },
             "bi_vis": {
-                "month": 9,
-                "day": 23
+                "day": 23,
+                "month": 9
             },
             "coming_out": {
-                "month": 10,
-                "day": 11
+                "day": 11,
+                "month": 10
             },
             "idahobit": {
-                "month": 5,
-                "day": 17
+                "day": 17,
+                "month": 5
             },
             "intersex": {
-                "month": 10,
-                "day": 26
+                "day": 26,
+                "month": 10
             },
             "lesbian_day": {
-                "month": 10,
-                "day": 8
+                "day": 8,
+                "month": 10
             },
-            "lesbian_vis": {
-                "month": 4,
-                "day": 26
+            "lesbian_vis_day": {
+                "day": 26,
+                "month": 4
             },
             "nb": {
-                "month": 7,
-                "day": 14
+                "day": 14,
+                "month": 7
             },
             "pan_vis": {
-                "month": 5,
-                "day": 24
+                "day": 24,
+                "month": 5
             },
             "pink": {
                 "month": 4,
-                "weekday": 3,
-                "n": 2
+                "n": 2,
+                "weekday": 3
             },
-			"tdor": {
-				"month": 11,
-				"day": 20
-			},
+            "tdor": {
+                "day": 20,
+                "month": 11
+            },
             "trans_vis": {
-                "month": 3,
-                "day": 31
+                "day": 31,
+                "month": 3
             },
             "women": {
-                "month": 3,
-                "day": 8
+                "day": 8,
+                "month": 3
             },
             "zero_discrim": {
-                "month": 3,
-                "day": 1
+                "day": 1,
+                "month": 3
+            }
+        },
+        "months": {
+            "pride_month": {
+                "month": 6
             }
         },
         "weeks": {
@@ -69,122 +74,127 @@
                 "week": "last"
             },
             "genderfluid_vis": {
+                "end_day": 24,
                 "month": 10,
-                "start_day": 17,
-                "end_day": 24
+                "start_day": 17
             },
-			"trans_week": {
-				"month": 11,
-				"start_day": 13,
-				"end_day": 19
-			}
-        },
-        "months": {
-            "pride_month": {
-                "month": 6
+            "lesbian_vis_week": {
+                "end_day": 26,
+                "month": 4,
+                "start_day": 20
+            },
+            "trans_week": {
+                "end_day": 19,
+                "month": 11,
+                "start_day": 13
             }
         }
     },
     "data": {
-        "standard": {
-            "name": "",
-            "banner": "alignment",
-            "blurb": "Your gateway to <em>Star Wars: Knights of the Old Republic</em>"
-        },
         "ace_day": {
-            "name": "International Asexuality Day",
-            "banner": "flag-ace",
-            "blurb": "Today is <a href='https://internationalasexualityday.org/en'>International Asexuality Day</a>"
+            "blurb": "Today is <a href='https://internationalasexualityday.org/en'>International Asexuality Day</a>",
+            "brand": "flag-ace",
+            "name": "International Asexuality Day"
         },
         "ace_week": {
-            "name": "Ace Week",
-            "banner": "flag-ace",
-            "blurb": "This week is <a href='https://www.grlgbtqhealthcareconsortium.org/significantdates/ace-week-2-9yn46'>Ace Week</a>"
+            "blurb": "This week is <a href='https://www.grlgbtqhealthcareconsortium.org/significantdates/ace-week-2-9yn46'>Ace Week</a>",
+            "brand": "flag-ace",
+            "name": "Ace Week"
         },
         "barlo": {
-            "name": "Bee Day",
-            "banner": "flag-barlo",
-            "blurb": "<div title='KAAAAAAAAAAANNN' style='font-variant: normal;'>(*^ω^*)</div>"
+            "blurb": "<div title='KAAAAAAAAAAANNN' style='font-variant: normal;'>(*^ω^*)</div>",
+            "brand": "flag-barlo",
+            "name": "Bee Day"
         },
         "bi_vis": {
-            "name": "Bi Visibility Day",
-            "banner": "flag-bi",
-            "blurb": "Today is <a href='https://bivisibilityday.com/about'>Bi Visibility Day</a>"
+            "blurb": "Today is <a href='https://bivisibilityday.com/about'>Bi Visibility Day</a>",
+            "brand": "flag-bi",
+            "name": "Bi Visibility Day"
         },
         "coming_out": {
-            "name": "National Coming Out Day",
-            "banner": "flag-rainbow",
-            "blurb": "Today is <a href='https://www.hrc.org/resources/national-coming-out-day'>National Coming Out Day</a>"
+            "blurb": "Today is <a href='https://www.hrc.org/resources/national-coming-out-day'>National Coming Out Day</a>",
+            "brand": "flag-rainbow",
+            "name": "National Coming Out Day"
         },
         "genderfluid_vis": {
-            "name": "Genderfluid Visibility Week",
-            "banner": "flag-genderfluid",
-            "blurb": "This week is <a href='https://www.grlgbtqhealthcareconsortium.org/significantdates/genderfluid-visibility-week-x3mla'>Genderfluid Visibility Week</a>"
+            "blurb": "This week is <a href='https://www.grlgbtqhealthcareconsortium.org/significantdates/genderfluid-visibility-week-x3mla'>Genderfluid Visibility Week</a>",
+            "brand": "flag-genderfluid",
+            "name": "Genderfluid Visibility Week"
         },
         "idahobit": {
-            "name": "International Day Against Homophobia, Biphobia and Transphobia",
-            "banner": "flag-progress",
-            "blurb": "Today is <a href='https://may17.org'>IDAHOBIT</a>"
+            "blurb": "Today is <a href='https://may17.org'>IDAHOBIT</a></span>",
+            "brand": "flag-progress",
+            "name": "International Day Against Homophobia, Biphobia and Transphobia"
         },
         "intersex": {
-            "name": "Intersex Awareness Day",
-            "banner": "flag-intersex",
-            "blurb": "Today is <a href='https://interactadvocates.org/intersex-awareness-day'>Intersex Awareness Day</a>"
+            "blurb": "Today is <a href='https://interactadvocates.org/intersex-awareness-day'>Intersex Awareness Day</a>",
+            "brand": "flag-intersex",
+            "name": "Intersex Awareness Day"
         },
         "lesbian_day": {
-            "name": "International Lesbian Day",
-            "banner": "flag-lesbian",
-            "blurb": "Today is <a href='https://www.lgbtiqhealth.org.au/international_lesbian_day2'>International Lesbian Day</a>"
+            "blurb": "Today is <a href='https://www.lgbtiqhealth.org.au/international_lesbian_day2'>International Lesbian Day</a>",
+            "brand": "flag-lesbian",
+            "name": "International Lesbian Day"
         },
-        "lesbian_vis": {
-            "name": "Lesbian Visibility Day",
-            "banner": "flag-lesbian",
-            "blurb": "Today is <a href='https://www.lesbianvisibilityweek.com'>Lesbian Visibility Day</a>"
+        "lesbian_vis_day": {
+            "blurb": "Today is <a href='https://www.lesbianvisibilityweek.com'>Lesbian Visibility Day</a>",
+            "brand": "flag-lesbian",
+            "name": "Lesbian Visibility Day"
+        },
+        "lesbian_vis_week": {
+            "blurb": "This week is <a href='https://www.lesbianvisibilityweek.com/'>Lesbian Visibility Week</a>",
+            "brand": "flag-lesbian",
+            "name": "Lesbian Visibility Week"
         },
         "nb": {
-            "name": "Non-Binary People's Day",
-            "banner": "flag-non-binary",
-            "blurb": "Today is <a href='https://www.manygendersonevoice.org/non-binary-peoples-day.html'>Non-Binary People's Day</a>"
+            "blurb": "Today is <a href='https://www.manygendersonevoice.org/non-binary-peoples-day.html'>Non-Binary People's Day</a>",
+            "brand": "flag-non-binary",
+            "name": "Non-Binary People's Day"
         },
         "pan_vis": {
-            "name": "Pansexual and Panromantic Awareness & Visibility Day",
-            "banner": "flag-pan",
-            "blurb": "Today is <a href='https://bivisibilityday.com/pan'>Pansexual and Panromantic Visibility Day</a>"
+            "blurb": "Today is <a href='https://bivisibilityday.com/pan'>Pansexual and Panromantic Visibility Day</a>",
+            "brand": "flag-pan",
+            "name": "Pansexual and Panromantic Awareness & Visibility Day"
         },
         "pink": {
-            "name": "International Day of Pink",
-            "banner": "flag-pink",
-            "blurb": "Today is <a href='https://www.dayofpink.org'>International Day of Pink</a>"
+            "blurb": "Today is <a href='https://www.dayofpink.org'>International Day of Pink</a>",
+            "brand": "flag-pink",
+            "name": "International Day of Pink"
         },
         "pride_month": {
-            "name": "Pride Month",
-            "banner": "flag-progress",
-            "blurb": "Celebrating <a href='https://www.loc.gov/lgbt-pride-month/about'>Pride Month</a>"
+            "blurb": "Celebrating <a href='https://www.loc.gov/lgbt-pride-month/about'>Pride Month</a>",
+            "brand": "flag-progress",
+            "name": "Pride Month"
         },
-		"tdor": {
-			"name": "Transgender Day of Remembrance",
-			"banner": "flag-trans",
-            "blurb": "Today is <a href='https://glaad.org/tdor'>Transgender Day of Remembrance</a>"
-		},
+        "standard": {
+            "blurb": "",
+            "brand": "alignment",
+            "name": ""
+        },
+        "tdor": {
+            "blurb": "Today is <a href='https://glaad.org/tdor'>Transgender Day of Remembrance</a>",
+            "brand": "flag-trans",
+            "name": "Transgender Day of Remembrance"
+        },
         "trans_vis": {
-            "name": "Trans Day of Visibility",
-            "banner": "flag-trans",
-            "blurb": "Today is <a href='https://www.manygendersonevoice.org/tdov.html'>Trans Day of Visibility</a>"
+            "blurb": "Today is <a href='https://www.manygendersonevoice.org/tdov.html'>Trans Day of Visibility</a>",
+            "brand": "flag-trans",
+            "name": "Trans Day of Visibility"
         },
         "trans_week": {
-            "name": "Transgender Awareness Week",
-            "banner": "flag-trans",
-            "blurb": "Today is <a href='https://glaad.org/transweek'>Transgender Awareness Week</a>"
+            "blurb": "Today is <a href='https://glaad.org/transweek'>Transgender Awareness Week</a>",
+            "brand": "flag-trans",
+            "name": "Transgender Awareness Week"
         },
         "women": {
-            "name": "International Women's Day",
-            "banner": "alignment-venus",
-            "blurb": "Today is <a href='https://www.internationalwomensday.com'>International Women's Day</a>"
+            "blurb": "Today is <a href='https://www.internationalwomensday.com'>International Women's Day</a>",
+            "brand": "alignment venus",
+            "name": "International Women's Day"
         },
         "zero_discrim": {
-            "name": "Zero Discrimination Day",
-            "banner": "flag-progress",
-            "blurb": "Today is <a href='https://www.unaids.org/en/zero-discrimination-day'>Zero Discrimination Day</a>"
+            "blurb": "Today is <a href='https://www.unaids.org/en/zero-discrimination-day'>Zero Discrimination Day</a>",
+            "brand": "flag-progress",
+            "name": "Zero Discrimination Day"
         }
     }
 }

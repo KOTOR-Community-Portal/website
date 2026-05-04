@@ -27,38 +27,45 @@ jobs:
         echo "cleanup=$cleanup" >> "$GITHUB_OUTPUT"
     
     - name: Checkout - website
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         path: website
         ref: main
 
     - name: Checkout - website-content
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         repository: KOTOR-Community-Portal/website-content
         path: website-content
         ref: main
     
     - name: Checkout - mod-builds
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         repository: KOTOR-Community-Portal/mod-builds
         path: mod-builds
+        ref: main
+
+    - name: Checkout - news
+      uses: actions/checkout@v6
+      with:
+        repository: KOTOR-Community-Portal/news
+        path: news
         ref: main
     
     # Checkout any additional repositories containing content
     
     - name: Checkout - static-html-generator
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         repository: KOTOR-Community-Portal/static-html-generator
         path: static-html-generator
         ref: main
     
     - name: Setup - .NET
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
-        dotnet-version: '7.0.x'
+        dotnet-version: '8.0.x'
     
     - name: Build Generator
       run: |
@@ -70,7 +77,7 @@ jobs:
     - name: Run Generator
       run: |
         cd website
-        dotnet ../static-html-generator/src/bin/Release/net7.0/StaticHtmlGenerator.dll
+        dotnet ../static-html-generator/src/bin/Release/net8.0/StaticHtmlGenerator.dll
         cd ..
     
     - name: Deploy to Neocities
@@ -80,4 +87,4 @@ jobs:
         cleanup: ${{ steps.input.outputs.cleanup }}
         neocities_supporter: false
         preview_before_deploy: true
-        dist_dir: website/build
+        dist_dir: website/dist
