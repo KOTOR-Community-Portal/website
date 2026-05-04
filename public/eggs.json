@@ -1,0 +1,58 @@
+{
+    "conditions": {
+        "days": {
+            "jizz": {
+                "day": 29,
+                "month": 12
+            },
+            "nero": {
+                "day": 16,
+                "month": 6
+            },
+            "riamu": {
+                "day": 12,
+                "month": 9
+            },
+            "sayuri": {
+                "day": 16,
+                "month": 5
+            },
+            "sto": {
+                "day": 29,
+                "month": 1
+            }
+        }
+    },
+    "data": {
+        "jizz": {
+            "alt": "Icon of a jizz instrument",
+            "img": "/images/icons/jizz.png",
+            "label": "Jizz",
+            "url": "https://www.youtube.com/watch?v=BPPWPggW7N4"
+        },
+        "nero": {
+            "alt": "Icon of Nero Claudius",
+            "img": "/images/icons/nero.png",
+            "label": "Umu",
+            "url": "https://c.tenor.com/0PmqL6UvdOUAAAAC/tenor.gif"
+        },
+        "riamu": {
+            "alt": "Icon of an egg",
+            "img": "/images/icons/egg.png",
+            "label": "Egg",
+            "url": "https://tbib.org/index.php?page=post&s=view&id=9743108"
+        },
+        "sayuri": {
+            "alt": "Icon of a lemon",
+            "img": "/images/icons/lemon.png",
+            "label": "Lemon",
+            "url": "https://store.steampowered.com/app/1023690/Nurse_Love_Syndrome/"
+        },
+        "sto": {
+            "alt": "Icon of Thon's Robe",
+            "img": "/images/icons/thon.png",
+            "label": "Thon's Robe",
+            "url": "https://stowiki.net/wiki/Main_Page"
+        }
+    }
+}

@@ -2,7 +2,7 @@
 bin/*
 
 # Build files
-build/*
+dist/*
 
 # Logs
 logs/*

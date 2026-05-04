@@ -1,0 +1,132 @@
+.flag-ace {
+  background: repeating-linear-gradient(
+    #000000 0 25%,
+    #a3a3a3 0 50%,
+    #ffffff 0 75%,
+    #800080 0 100%
+  );
+}
+.flag-barlo {
+  background: repeating-linear-gradient(
+    #982e96 0 33.33%,
+    #2e71da 0 80%,
+    #49922e 0 100%
+  );
+}
+.flag-bi {
+  background: repeating-linear-gradient(
+    #d60270 0 40%,
+    #9b4f97 0 60%,
+    #0038a7 0 100%
+  );
+}
+.flag-genderfluid {
+  background: repeating-linear-gradient(
+    #ff76a4 0 20%,
+    #ffffff 0 40%,
+    #c011d7 0 60%,
+    #000000 0 80%,
+    #2f3cbe 0 100%
+  );
+}
+.flag-intersex {
+  background: #ffd800;
+}
+.flag-lesbian {
+  background: repeating-linear-gradient(
+    #d62900 0 20%,
+    #ff9b55 0 40%,
+    #ffffff 0 60%,
+    #d461a6 0 80%,
+    #a50062 0 100%
+  );
+}
+.flag-non-binary {
+  background: repeating-linear-gradient(
+    #fff430 0 25%,
+    #ffffff 0 50%,
+    #9c59d1 0 75%,
+    #000000 0 100%
+  );
+}
+.flag-pan {
+  background: repeating-linear-gradient(
+    #ff218c 0 33.33%,
+    #ffd800 0 66.67%,
+    #21b1ff 0 100%
+  );
+}
+.flag-pink {
+  background: #ff0099;
+}
+.flag-progress,
+.flag-rainbow {
+  background: repeating-linear-gradient(
+    #e40303 0 16.67%,
+    #ff8c00 0 33.33%,
+    #ffed00 0 50%,
+    #008026 0 66.67%,
+    #004dff 0 83.33%,
+    #750787 0 100%
+  );
+}
+.flag-trans {
+  background: repeating-linear-gradient(
+    #5bcefa 0 20%,
+    #f5a9b8 0 40%,
+    #ffffff 0 60%,
+    #f5a9b8 0 80%,
+    #5bcefa 0 100%
+  );
+}
+
+.flag-intersex .overlay {
+  background: radial-gradient(
+    circle,
+    transparent 35.5%,
+    #7902aa 36% 49%,
+    transparent 49.5%
+  );
+  width: var(--h);
+}
+.flag-progress .overlay {
+  background: conic-gradient(
+      at 14% 50%,
+      #0000 221.25deg,
+      #ffffff 222deg 318deg,
+      #0000 318.25deg
+    ),
+    conic-gradient(
+      at 23% 50%,
+      #0000 221.25deg,
+      #f5a9b8 222deg 318deg,
+      #0000 318.25deg
+    ),
+    conic-gradient(
+      at 32% 50%,
+      #0000 221.25deg,
+      #5bcefa 222deg 318deg,
+      #0000 318.25deg
+    ),
+    conic-gradient(
+      at 41% 50%,
+      #0000 221.25deg,
+      #784f17 222deg 318deg,
+      #0000 318.25deg
+    ),
+    conic-gradient(
+      at 50% 50%,
+      #0000 221.25deg,
+      #000000 222deg 318deg,
+      #0000 318.25deg
+    );
+  margin-left: calc(-0.1 * var(--h));
+  width: calc(1.67 * var(--h));
+}
+.venus .overlay {
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='12pt' height='12pt' viewBox='0 0 12 12' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style='fill:none;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(35.15%25,0%25,64.85%25);stroke-opacity:1;stroke-miterlimit:10;' d='M 85 85 C 85 98.789062 73.789062 110 60 110 C 46.210938 110 35 98.789062 35 85 C 35 71.210938 46.210938 60 60 60 C 73.789062 60 85 71.210938 85 85 Z M 85 85 ' transform='matrix(0.1,0,0,-0.1,0,12)'/%3E%3Cpath style='fill:none;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(35.15%25,0%25,64.85%25);stroke-opacity:1;stroke-miterlimit:10;' d='M 60 10 L 60 60 ' transform='matrix(0.1,0,0,-0.1,0,12)'/%3E%3Cpath style='fill:none;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(35.15%25,0%25,64.85%25);stroke-opacity:1;stroke-miterlimit:10;' d='M 35 35 L 85 35 ' transform='matrix(0.1,0,0,-0.1,0,12)'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  left: calc(-0.1 * var(--h));
+  width: var(--h);
+}

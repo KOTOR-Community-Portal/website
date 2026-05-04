@@ -1,7 +1,7 @@
 # KOTOR Community Portal Website
 This repository contains the build system for the KOTOR Community Portal website which is located at https://kotor.neocities.org/. This document will go over the process for building the website and deploying to Neocities, including how to preview the website on your local machine.
 
-The toolchain has only been built for Windows at this time.
+The toolchain has only been built for Windows at this time and requires the .NET 8 runtime environment.
 
 ## Setup
 1. Download a copy of this repository ([website](https://github.com/KOTOR-Community-Portal/website)), and any repositories with content you will be working with (e.g. [website-content](https://github.com/KOTOR-Community-Portal/website-content)).
@@ -41,8 +41,8 @@ You can build a copy of the website on your local machine by running the `build.
 Roughly, this is how the Static HTML Generator works:
 1. A manifest file, `manifest.xml`, lists all of the pages to be built.
 2. For each page, content is converted from Markdown to HTML based on templates specified in the manifest.
-3. Generated HTML pages are saved to the `build` folder.
-4. All files in the `public` folder are copied to the `build` folder.
+3. Generated HTML pages are saved to the `dist` folder.
+4. All files in the `public` folder are copied to the `dist` folder.
 
 You will need to run `build.bat` again whenever you make or pull changes to the website content.
 
