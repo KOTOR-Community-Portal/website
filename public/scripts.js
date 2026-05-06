@@ -402,6 +402,17 @@ function loadModals() {
   document.querySelector("#menu-save")?.addEventListener("click", (e) => menu_onSave(e));
 }
 
+function loadProtectedLinks() {
+  const onClick = (event) => {
+    event.preventDefault();
+    const href = atob(event.target.dataset.href);
+    window.open(href, "_self");
+  };
+  document.querySelectorAll("a[data-href]").forEach((e) => {
+    e.addEventListener("click", onClick);
+  });
+}
+
 function loadTheme() {
   setTheme(getLocalOrSession("theme") || "kotor2");
 }
@@ -427,6 +438,7 @@ function onLoad() {
       createThemePreview(document.querySelector("#preview"));
       Promise.all([
         loadModals(),
+        loadProtectedLinks(),
         loadScrolling(),
         loadTooltips(),
         loadSpoilers(),

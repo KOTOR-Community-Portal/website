@@ -2,7 +2,7 @@ function Socials() {
   const htmlUtils = utils.html;
   const count = 6;
   const socials = [
-      { label: "Discord", url: "https://discord.gg/MxYDSG2FZu", img: "/images/logos/discord.svg" },
+      { label: "Discord", url: "https://discord.gg/kotor#rules", img: "/images/logos/discord.svg" },
       { label: "Deadly Stream", url: "https://deadlystream.com", img: "/images/logos/deadly-stream.png" },
       { label: "GitHub", url: "https://github.com/KOTOR-Community-Portal", img: "/images/logos/github.svg" }
   ];
