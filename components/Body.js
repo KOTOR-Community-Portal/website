@@ -1,8 +1,13 @@
 function Body(sections) {
+  const PROTECTED_LINKS = {
+    "https://discord.gg/kotor#rules": "aHR0cHM6Ly9kaXNjb3JkLmdnL014WURTRzJGWnU=",
+    "https://discord.gg/kotor#tech_support": "aHR0cHM6Ly9kaXNjb3JkLmdnL3F3N05oTTZFVzU=",
+  };
+
   const { header, main, right, toc, featured, footer, modal } = sections;
   const htmlUtils = utils.html;
   const ids = htmlUtils.ids(["loading", "lyt"]);
-  return html`
+  return htmlUtils.parse(html`
     <body>
       <div id="${ids.lyt}" class="lyt">
         <header class="${header.class}">${header.content}</header>
@@ -32,5 +37,17 @@ function Body(sections) {
         onLoad();
       </script>
     </body>
-  `;
+  `, (parent) => {
+    // Replace protected links
+    [...parent.querySelectorAll("a")].forEach((x) => {
+      const b64 = PROTECTED_LINKS[x.href];
+      if (b64) {
+        const match = /^(.*)#.*$/.exec(x.href);
+        const href = (match && match[1]) || x.href;
+        x.setAttribute("href", href);
+        x.setAttribute("data-href", b64);
+      }
+    });
+    return parent.innerHtml;
+  });
 }
