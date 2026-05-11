@@ -5,6 +5,8 @@ function Main(content, asideContent) {
   const MIN_LINE_COUNT = 5;
 
   const htmlUtils = utils.html;
+  const { page } = ctx;
+
   return htmlUtils.parse(content, (parent) => {
     const ids = htmlUtils.ids(["aside"]);
     const [first, ...rest] = htmlUtils.divide(parent.children, "h1, h2").map((x) => {
@@ -43,6 +45,9 @@ function Main(content, asideContent) {
     const hasArticles = [...parent.querySelectorAll("h1")].length > 1;
     const h = hasArticles ? "h1" : "h2";
 
+    const metadata = Metadata(page.tokens.main, page.tokens.meta);
+    const modified = metadata && (metadata.modified_on || new Date().toISOString());
+
     const heading = first.outerHtml;
     const body = htmlUtils.group(rest, h).map((x) => {
       const [f, ...r] = x;
@@ -57,6 +62,7 @@ function Main(content, asideContent) {
     return html`
       <div class="col">
         ${heading}
+        ${modified && LastModified(modified)}
         ${asideContent && html`
         <div id="${ids.aside}" class="aside">
           <div>

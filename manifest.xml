@@ -75,6 +75,7 @@
 									<token name="main">../mod-builds/content/k1/spoiler-free.md</token>
 									<token name="aside">../mod-builds/content/aside.md</token>
 									<token name="sidebar">toc</token>
+									<token name="meta">../mod-builds/meta.json</token>
 								</page>
 								<page path="modding/mod_builds/k1/full.html">
 									<title>KOTOR 1 Full</title>
@@ -82,6 +83,7 @@
 									<token name="main">../mod-builds/content/k1/full.md</token>
 									<token name="aside">../mod-builds/content/aside.md</token>
 									<token name="sidebar">toc</token>
+									<token name="meta">../mod-builds/meta.json</token>
 								</page>
 								<page path="modding/mod_builds/k1/spoiler-free_mobile.html">
 									<title>KOTOR 1 Spoiler Free (Mobile)</title>
@@ -89,6 +91,7 @@
 									<token name="main">../mod-builds/content/k1/spoiler-free_mobile.md</token>
 									<token name="aside">../mod-builds/content/aside.md</token>
 									<token name="sidebar">toc</token>
+									<token name="meta">../mod-builds/meta.json</token>
 								</page>
 								<page path="modding/mod_builds/k1/full_mobile.html">
 									<title>KOTOR 1 Full (Mobile)</title>
@@ -96,6 +99,7 @@
 									<token name="main">../mod-builds/content/k1/full_mobile.md</token>
 									<token name="aside">../mod-builds/content/aside.md</token>
 									<token name="sidebar">toc</token>
+									<token name="meta">../mod-builds/meta.json</token>
 								</page>
 								<page path="modding/mod_builds/k1/widescreen.html">
 									<title>KOTOR 1 Widescreen</title>
@@ -126,6 +130,7 @@
 									<token name="main">../mod-builds/content/k2/spoiler-free.md</token>
 									<token name="aside">../mod-builds/content/aside.md</token>
 									<token name="sidebar">toc</token>
+									<token name="meta">../mod-builds/meta.json</token>
 								</page>				
 								<page path="modding/mod_builds/k2/full.html">
 									<title>KOTOR 2 Full</title>
@@ -133,6 +138,7 @@
 									<token name="main">../mod-builds/content/k2/full.md</token>
 									<token name="aside">../mod-builds/content/aside.md</token>
 									<token name="sidebar">toc</token>
+									<token name="meta">../mod-builds/meta.json</token>
 								</page>
 								<page path="modding/mod_builds/k2/spoiler-free_mobile.html">
 									<title>KOTOR 2 Spoiler-Free (Mobile)</title>
@@ -140,6 +146,7 @@
 									<token name="main">../mod-builds/content/k2/spoiler-free_mobile.md</token>
 									<token name="aside">../mod-builds/content/aside.md</token>
 									<token name="sidebar">toc</token>
+									<token name="meta">../mod-builds/meta.json</token>
 								</page>
 								<page path="modding/mod_builds/k2/full_mobile.html">
 									<title>KOTOR 2 Full (Mobile)</title>
@@ -147,6 +154,7 @@
 									<token name="main">../mod-builds/content/k2/full_mobile.md</token>
 									<token name="aside">../mod-builds/content/aside.md</token>
 									<token name="sidebar">toc</token>
+									<token name="meta">../mod-builds/meta.json</token>
 								</page>
 								<page path="modding/mod_builds/k2/widescreen.html">
 									<title>KOTOR 2 Widescreen</title>

@@ -408,6 +408,12 @@ button:not(:disabled) {
     margin-bottom: var(--g);
   }
 
+  .main .modified {
+    --mt: calc(var(--gap) - var(--g));
+    --mb: var(--gap);
+    margin-right: 0;
+  }
+
   .main .aside {
     flex: 1 0 var(--side-w);
     margin: 0;
@@ -1265,6 +1271,40 @@ button:not(:disabled) {
   justify-content: center;
   min-height: 36px;
   padding: 0.4px;
+}
+
+/* Last Modified */
+.modified {
+  --mt: var(--gap);
+  --mb: 0;
+  align-items: center;
+  background: var(--secondary-bg-dark);
+  border: 2px solid var(--secondary-border);
+  border-left-width: 0;
+  border-right-width: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: var(--mt);
+  margin-bottom: var(--mb);
+  padding: 6px;
+}
+
+.modified>img {
+  vertical-align: middle;
+  margin-block: -6px;
+  width: 40px;
+  height: 40px;
+}
+
+.modified>strong {
+  font-weight: 700;
+  color: var(--secondary-text);
+}
+
+.modified>time {
+  color: var(--accent);
 }
 
 /* Subpage Menu */
