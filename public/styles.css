@@ -379,7 +379,7 @@ button:not(:disabled) {
 /* Desktop */
 @media (min-width: 1281px) {
   .lyt {
-    --side-w: min(25vw, 768px);
+    --side-w: min(25vw, 400px);
   }
 
   .copy .prom[data-size="mdRect"] {
