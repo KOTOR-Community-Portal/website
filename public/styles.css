@@ -104,7 +104,7 @@ body {
   background: black;
   color: var(--text);
   font-family: var(--ff-sans-serif);
-  font-size: 112.5%;
+  font-size: 100%;
   line-height: 1.5em;
   scrollbar-color: var(--text) var(--bg-light);
 }
