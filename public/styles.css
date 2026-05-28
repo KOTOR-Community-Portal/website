@@ -332,10 +332,6 @@ button:not(:disabled) {
     padding-right: 0;
   }
 
-  .sidebar .col {
-    gap: var(--g);
-  }
-
   .sidebar .scroll {
     overscroll-behavior: contain;
   }
@@ -699,6 +695,10 @@ button:not(:disabled) {
   border: 2px solid var(--border);
   border-radius: 2px;
   color: var(--text);
+}
+
+.sidebar .col {
+  gap: var(--g);
 }
 
 /********************************************************************************
