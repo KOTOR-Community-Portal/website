@@ -24,5 +24,6 @@ function Featured(ids) {
       </ul>
     </div>
   `;
-  return CollapseTrigger(ids.collapse, ids.label, heading) + Collapse(ids.collapse, ids.label, box);
+  return CollapseTrigger(ids.collapse, ids.label, heading, { hasSetting: true }) +
+    Collapse(ids.collapse, ids.label, box);
 }

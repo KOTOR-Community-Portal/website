@@ -104,7 +104,7 @@ body {
   background: black;
   color: var(--text);
   font-family: var(--ff-sans-serif);
-  font-size: 112.5%;
+  font-size: 100%;
   line-height: 1.5em;
   scrollbar-color: var(--text) var(--bg-light);
 }
@@ -332,10 +332,6 @@ button:not(:disabled) {
     padding-right: 0;
   }
 
-  .sidebar .col {
-    gap: var(--g);
-  }
-
   .sidebar .scroll {
     overscroll-behavior: contain;
   }
@@ -379,7 +375,7 @@ button:not(:disabled) {
 /* Desktop */
 @media (min-width: 1281px) {
   .lyt {
-    --side-w: min(25vw, 768px);
+    --side-w: min(25vw, 400px);
   }
 
   .copy .prom[data-size="mdRect"] {
@@ -406,6 +402,12 @@ button:not(:disabled) {
   .main .col>:first-child {
     margin-right: 0;
     margin-bottom: var(--g);
+  }
+
+  .main .modified {
+    --mt: calc(var(--gap) - var(--g));
+    --mb: var(--gap);
+    margin-right: 0;
   }
 
   .main .aside {
@@ -693,6 +695,10 @@ button:not(:disabled) {
   border: 2px solid var(--border);
   border-radius: 2px;
   color: var(--text);
+}
+
+.sidebar .col {
+  gap: var(--g);
 }
 
 /********************************************************************************
@@ -1267,6 +1273,40 @@ button:not(:disabled) {
   padding: 0.4px;
 }
 
+/* Last Modified */
+.modified {
+  --mt: var(--gap);
+  --mb: 0;
+  align-items: center;
+  background: var(--secondary-bg-dark);
+  border: 2px solid var(--secondary-border);
+  border-left-width: 0;
+  border-right-width: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: var(--mt);
+  margin-bottom: var(--mb);
+  padding: 6px;
+}
+
+.modified>img {
+  vertical-align: middle;
+  margin-block: -6px;
+  width: 40px;
+  height: 40px;
+}
+
+.modified>strong {
+  font-weight: 700;
+  color: var(--secondary-text);
+}
+
+.modified>time {
+  color: var(--accent);
+}
+
 /* Subpage Menu */
 .subpages .copy {
   font: var(--font-title);
@@ -1772,13 +1812,13 @@ button:not(:disabled) {
   max-width: 50%;
 }
 
+.comp input[type="checkbox"],
 .comp input[type="radio"] {
   --b: 0.1em;
   --s: 1em;
   appearance: none;
   background: none;
   border: var(--b) solid currentColor;
-  border-radius: 50%;
   box-sizing: border-box;
   color: currentColor;
   font: inherit;
@@ -1789,12 +1829,34 @@ button:not(:disabled) {
   height: var(--s);
 }
 
+.comp input[type="checkbox"]:checked,
 .comp input[type="radio"]:checked {
   border: none;
   background-color: var(--fill);
 }
 
+.comp input[type="checkbox"] {
+  border-radius: 20%;
+}
+
+.comp input[type="checkbox"]:checked::before {
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  display: inline-block;
+  background-color: var(--primary-bg-dark);
+  content: "";
+  position: absolute;
+  top: calc(0.125 * var(--s));
+  left: calc(0.125 * var(--s));
+  width: calc(0.75 * var(--s));
+  height: calc(0.75 * var(--s));
+}
+
+.comp input[type="radio"] {
+  border-radius: 50%;
+}
+
 .comp input[type="radio"],
+.comp input[type="checkbox"],
 .comp label {
   cursor: pointer;
 }

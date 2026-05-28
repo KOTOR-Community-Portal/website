@@ -30,6 +30,7 @@ function TableOfContents(ids, content) {
         <div class="frame-bottom"></div>
       </div>
     `;
-    return CollapseTrigger(ids.collapse, ids.label, heading) + Collapse(ids.collapse, ids.label, box);
+    return CollapseTrigger(ids.collapse, ids.label, heading, { hasSetting: true }) +
+      Collapse(ids.collapse, ids.label, box);
   });
 }
