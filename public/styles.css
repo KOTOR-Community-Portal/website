@@ -1812,13 +1812,13 @@ button:not(:disabled) {
   max-width: 50%;
 }
 
+.comp input[type="checkbox"],
 .comp input[type="radio"] {
   --b: 0.1em;
   --s: 1em;
   appearance: none;
   background: none;
   border: var(--b) solid currentColor;
-  border-radius: 50%;
   box-sizing: border-box;
   color: currentColor;
   font: inherit;
@@ -1829,12 +1829,34 @@ button:not(:disabled) {
   height: var(--s);
 }
 
+.comp input[type="checkbox"]:checked,
 .comp input[type="radio"]:checked {
   border: none;
   background-color: var(--fill);
 }
 
+.comp input[type="checkbox"] {
+  border-radius: 20%;
+}
+
+.comp input[type="checkbox"]:checked::before {
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  display: inline-block;
+  background-color: var(--primary-bg-dark);
+  content: "";
+  position: absolute;
+  top: calc(0.125 * var(--s));
+  left: calc(0.125 * var(--s));
+  width: calc(0.75 * var(--s));
+  height: calc(0.75 * var(--s));
+}
+
+.comp input[type="radio"] {
+  border-radius: 50%;
+}
+
 .comp input[type="radio"],
+.comp input[type="checkbox"],
 .comp label {
   cursor: pointer;
 }

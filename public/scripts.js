@@ -133,6 +133,12 @@ function getLocalOrSession(key) {
     : sessionStorage[key];
 }
 
+function getLocalOrSessionJSON(key) {
+  const s = getLocalOrSession(key);
+  if (!s) return {};
+  return JSON.parse(s);
+}
+
 function getStartOfLastWeekInMonth(date) {
   const year = date.getFullYear();
   const month = date.getMonth();
@@ -141,10 +147,6 @@ function getStartOfLastWeekInMonth(date) {
   endOfMonth.setDate(0);
   const day = endOfMonth.getDate() - 6 - endOfMonth.getDay();
   return new Date(year, month, day);
-}
-
-function getTheme() {
-  return getLocalOrSession("theme");
 }
 
 async function getToday(url) {
@@ -211,7 +213,7 @@ function loadBreadcrumbs() {
   }
 }
 
-function loadCollapseBreakpoints() {
+function loadAutoCollapse() {
   const ranges = {
     ".sidebar *": "-md",
     ".aside *": "-u",
@@ -221,15 +223,28 @@ function loadCollapseBreakpoints() {
       e.style.display = "";
     } else {
       e.style.display = "none";
-      if (e.getAttribute("aria-expanded") === "false") {
+      if (e.getAttribute("aria-expanded") !== "true") {
         document
           .querySelectorAll(e.getAttribute("data-bs-target"))
           .forEach((target) => {
-            bootstrap.Collapse.getInstance(target).toggle();
+            bootstrap.Collapse.getInstance(target).show();
           });
       }
     }
   };
+  const onClick = (event) => {
+    const settings = getLocalOrSessionJSON("collapse");
+    const key = /^#(.+)-collapse$/.exec(event.target.getAttribute("data-bs-target"))[1];
+    if (!key) return;
+    const collapsed = event.target.getAttribute("aria-expanded") === "true";
+    settings[key] = !collapsed;
+    setLocalOrSessionJSON("collapse", settings);
+  }
+  const settings = getLocalOrSessionJSON("collapse");
+  const autoCollapse = new Map();
+  for (let [key, value] of Object.entries(settings)) {
+    autoCollapse.set(key + "-collapse", value);
+  }
   for (let key in ranges) {
     const [min, max] = parseBreakpoint(breakpoint.width, ranges[key]);
     const mql = window.matchMedia(formatDimensionQuery("width", min, max));
@@ -238,7 +253,25 @@ function loadCollapseBreakpoints() {
         .querySelectorAll(`${key}[data-bs-toggle='collapse']`)
         .forEach((e) => doChange(e, event));
     mql.addEventListener("change", onChange);
-    onChange(mql);
+    if (!mql.matches) {
+      document
+        .querySelectorAll(`${key}[data-bs-toggle='collapse']`)
+        .forEach((e) => {
+          document
+            .querySelectorAll(e.getAttribute("data-bs-target"))
+            .forEach((x) => autoCollapse.set(x.id, false));
+      });
+      onChange(mql);
+    }
+  }
+  document
+    .querySelectorAll("[data-bs-toggle='collapse'][data-setting]")
+    .forEach((e) => e.addEventListener("click", onClick));
+  for (const [key, value] of autoCollapse) {
+    if (value) {
+      const e = document.getElementById(key);
+      if (e) new bootstrap.Collapse(e, { toggle: value });
+    }
   }
 }
 
@@ -382,18 +415,25 @@ function loadModals() {
     if (els.length > 0) els[0].focus();
   };
   const menu_onShow = (e) => {
-    const theme = getTheme();
+    const theme = getLocalOrSession("theme");
     e.target.querySelectorAll("input[name='theme']")
       .forEach((x) => {
         x.checked = x.value === theme;
       });
+    const settings = getLocalOrSessionJSON("collapse");
+    e.target.querySelectorAll("input[name='collapse']")
+      .forEach((x) => {
+        x.checked = settings[x.value] === true;
+      });
     document.querySelector("#preview iframe")?.setTheme(theme);
   }
   const menu_onSave = (_) => {
-    const [input] = [...document.querySelectorAll("input[name='theme']:checked")];
-    if (input) {
-      setTheme(input.value);
+    const [themeInput] = [...document.querySelectorAll("input[name='theme']:checked")];
+    if (themeInput) {
+      setTheme(themeInput.value);
     }
+    const collapseInput = document.querySelectorAll("input[name='collapse']");
+    setCollapseSettings(collapseInput);
     $("#menu").modal("toggle");
   };
 
@@ -430,7 +470,7 @@ function onLoad() {
     loadFooter(),
     loadTheme(),
     loadBreadcrumbs(),
-    loadCollapseBreakpoints(),
+    loadAutoCollapse(),
     loadCollapseScrolling(),
     loadEggs(),
   ])
@@ -468,14 +508,26 @@ function parseBreakpoint(pts, s) {
   return [a === undefined ? undefined : a + 1, b === undefined ? undefined : b];
 }
 
-function setTheme(theme) {
-  document.documentElement.className = theme;
-  setLocalOrSession("theme", theme);
+function setCollapseSettings(input) {
+  const settings = getLocalOrSessionJSON("collapse");
+  input.forEach((x) => {
+    settings[x.value] = x.checked;
+  });
+  setLocalOrSessionJSON("collapse", settings);
 }
 
 function setLocalOrSession(key, value) {
   if (typeof window.localStorage != "undefined") localStorage[key] = value;
   else sessionStorage[key];
+}
+
+function setLocalOrSessionJSON(key, value) {
+  setLocalOrSession(key, JSON.stringify(value));
+}
+
+function setTheme(theme) {
+  document.documentElement.className = theme;
+  setLocalOrSession("theme", theme);
 }
 
 function shuffle(arr) {

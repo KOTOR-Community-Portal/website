@@ -13,7 +13,7 @@ function Collapse(id, labelId, content, opts) {
 }
 
 function CollapseTrigger(targetId, labelId, content, opts) {
-  const { collapsed } = opts || {};
+  const { collapsed, hasSetting } = opts || {};
   const htmlUtils = utils.html;
   return htmlUtils.parse(content, (parent) => {
     const e = parent.firstElementChild;
@@ -27,6 +27,7 @@ function CollapseTrigger(targetId, labelId, content, opts) {
         aria-expanded="${collapsed ? "false" : "true"}"
       ></button>
     `;
+    if (hasSetting) e.querySelector("button").setAttribute("data-setting", "");
     return e.outerHtml;
   });
 }

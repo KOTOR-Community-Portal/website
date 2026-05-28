@@ -8,7 +8,7 @@ function Aside(id, content) {
     const scroll = htmlUtils.wrap(rest, html`<div class="scroll"></div>`);
     const box = htmlUtils.wrap([scroll], html`<div class="box"></div>`);
     return (
-      CollapseTrigger(collapseId, labelId, heading.outerHtml) +
+      CollapseTrigger(collapseId, labelId, heading.outerHtml, { hasSetting: true }) +
       Collapse(collapseId, labelId, box.outerHtml)
     );
   });
