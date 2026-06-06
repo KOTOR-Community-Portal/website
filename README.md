@@ -61,7 +61,7 @@ When you have finished making changes on your local machine, you will need to co
 You may also want to check our [Writing Guide](https://github.com/KOTOR-Community-Portal/website-content/blob/-/WRITING.md) for information about the Markdown format and best practices.
 
 ## Deploy
-This repository contains a workflow which automatically builds and deploys the website whenever changes are made to the `main` branch. The workflow can also be run manually by contributors to this repository.
+This repository contains a workflow which automatically builds and deploys the website whenever run by contributors to this repository.
 
 1. Go to the [Deploy workflow](https://github.com/KOTOR-Community-Portal/kotor-community-portal.github.io/actions/workflows/deploy.yml).
    - You can get to this workflow from anywhere in the [kotor-community-portal.github.io](https://github.com/KOTOR-Community-Portal/kotor-community-portal.github.io) repository by going to the `Actions` tab, then selecting the `Deploy` workflow from the sidebar.
