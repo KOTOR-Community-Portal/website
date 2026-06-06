@@ -63,8 +63,8 @@ You may also want to check our [Writing Guide](https://github.com/KOTOR-Communit
 ## Deploy
 This repository contains a workflow which automatically builds and deploys the website whenever changes are made to the `main` branch. The workflow can also be run manually by contributors to this repository.
 
-1. Go to the [Deploy to Neocities workflow](https://github.com/KOTOR-Community-Portal/website/actions/workflows/deploy-to-neocities.yml).
-   - You can get to this workflow from anywhere in the `website` repository by going to the `Actions` tab, then selecting the `Deploy to Neocities` workflow from the sidebar.
+1. Go to the [Deploy workflow](https://github.com/KOTOR-Community-Portal/kotor-community-portal.github.io/actions/workflows/deploy.yml).
+   - You can get to this workflow from anywhere in the [kotor-community-portal.github.io](https://github.com/KOTOR-Community-Portal/kotor-community-portal.github.io) repository by going to the `Actions` tab, then selecting the `Deploy` workflow from the sidebar.
 2. Click the `Run workflow` button.
 3. This will open a popover menu with two options. You most likely will want to keep the defaults, but here is what these options do:
    - `Use workflow from`: This lets you choose which branch of the repository the workflow will run on.
@@ -74,14 +74,16 @@ This repository contains a workflow which automatically builds and deploys the w
 Roughly, this is what the workflow does:
 1. Download the contents of all website repositories.
 2. Download, build, and run the Static HTML Generator.
-3. Deploy the built website to Neocities.
+3. Upload an archive of the built website which will be available for up to 90 days.
+4. Deploy the built website to Neocities.
+5. Deploy a backup of the built website to GitHub Pages.
 
 Step 1 needs to be updated if the repository structure changes, such as if repositories for new types of content are created.
 
 The Static HTML Generator used in Step 2 is a .NET application. Code is checked out from the `main` branch of the [static-html-generator](https://github.com/KOTOR-Community-Portal/static-html-generator) repository. This step builds the code from source and does __not__ download a release. This step should not fail unless a breaking change is made to the associated repository or there is some unforeseeable .NET issue.
 
-A third-party workflow, [Deploy to Neocities](https://github.com/bcomnes/deploy-to-neocities), is used in Step 3. This step could potentially go wrong for reasons beyond our control if that workflow has an issue. Our workflow might also fail if Neocities is down or if Neocities rate limits our requests.
+A third-party workflow, [Deploy to Neocities](https://github.com/bcomnes/deploy-to-neocities), is used in Step 4. This step could potentially go wrong for reasons beyond our control if that workflow has an issue. Our workflow might also fail if Neocities is down or if Neocities rate limits our requests.
 
-The request to deploy to Neocities requires an API key which is stored as a secret on this repository. The value of a secret is not visible on GitHub, so only someone with access to the `kotor.neocities.org` account can see what it is. This account can also generate a new API key, invalidating the old one. In such an event, the GitHub secret `NEOCITIES_API_KEY` will need to be updated for the workflow to be able to run successfully.
+The request to deploy to Neocities requires an API key which is stored as a secret on the [kotor-community-portal.github.io](https://github.com/KOTOR-Community-Portal/kotor-community-portal.github.io) repository. The value of a secret is not visible on GitHub, so only someone with access to the `kotor.neocities.org` account can see what it is. This account can also generate a new API key, invalidating the old one. In such an event, the GitHub secret `NEOCITIES_API_KEY` will need to be updated for the workflow to be able to run successfully.
 
 GitHub generates extensive logs which may help in the event that something goes wrong and the problem is not one of the ones mentioned above.
