@@ -769,6 +769,12 @@ button:not(:disabled) {
   margin-bottom: 12px;
 }
 
+.col h4,
+.col h5,
+.col h6 {
+  margin-bottom: 12px;
+}
+
 .col h1 button,
 .col h2 button {
   vertical-align: middle;
