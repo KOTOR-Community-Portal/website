@@ -8,6 +8,12 @@ function Markdown(path, opts) {
         [...parent.querySelectorAll(htmlUtils.query.heading)].forEach((x) =>
           htmlUtils.giveId(x)
         );
+        // Remove empty table headings
+        [...parent.querySelectorAll("thead")].forEach((x) => {
+          if ([...x.querySelectorAll("th")].every((th) => th.textContent === "")) {
+            x.parentElement.removeChild(x);
+          };
+        });
         // Insert spoiler components
         [...parent.querySelectorAll(".spoiler")].forEach((x) => {
           const id = htmlUtils.id("spoiler");

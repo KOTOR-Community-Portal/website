@@ -191,6 +191,13 @@
 									<token name="main">../mod-builds/content/macos.md</token>
 									<token name="aside">../mod-builds/content/aside.md</token>
 								</page>
+								<page path="modding/mod_builds/linux.html">
+									<title>Modding KOTOR on Linux</title>
+									<template>Article</template>
+									<token name="main">../mod-builds/content/linux.md</token>
+									<token name="aside">../mod-builds/content/aside.md</token>
+									<token name="meta">../mod-builds/meta.json</token>
+								</page>
 							</subpages>
 						</page>
 					</subpages>
