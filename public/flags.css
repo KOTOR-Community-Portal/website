@@ -80,6 +80,14 @@
   );
 }
 
+.alignment .overlay {
+  --s: max(calc(0.95 * var(--brand-h-s)), 0.75 * var(--h));
+  background-image: url("./images/icons/pride-flag.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 100%;
+  width: var(--s);
+}
 .flag-intersex .overlay {
   background: radial-gradient(
     circle,
@@ -123,8 +131,17 @@
   margin-left: calc(-0.1 * var(--h));
   width: calc(1.67 * var(--h));
 }
+.aids .overlay {
+  background-image: url("/images/icons/aids-ribbon.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  left: calc(-0.1 * var(--h));
+  width: var(--h);
+}
 .venus .overlay {
   background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8'%3F%3E%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='12pt' height='12pt' viewBox='0 0 12 12' version='1.1'%3E%3Cg id='surface1'%3E%3Cpath style='fill:none;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(35.15%25,0%25,64.85%25);stroke-opacity:1;stroke-miterlimit:10;' d='M 85 85 C 85 98.789062 73.789062 110 60 110 C 46.210938 110 35 98.789062 35 85 C 35 71.210938 46.210938 60 60 60 C 73.789062 60 85 71.210938 85 85 Z M 85 85 ' transform='matrix(0.1,0,0,-0.1,0,12)'/%3E%3Cpath style='fill:none;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(35.15%25,0%25,64.85%25);stroke-opacity:1;stroke-miterlimit:10;' d='M 60 10 L 60 60 ' transform='matrix(0.1,0,0,-0.1,0,12)'/%3E%3Cpath style='fill:none;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(35.15%25,0%25,64.85%25);stroke-opacity:1;stroke-miterlimit:10;' d='M 35 35 L 85 35 ' transform='matrix(0.1,0,0,-0.1,0,12)'/%3E%3C/g%3E%3C/svg%3E");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   left: calc(-0.1 * var(--h));
