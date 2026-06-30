@@ -85,7 +85,7 @@
   background-image: url("./images/icons/pride-flag.svg");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: 50% calc(100% - 0.025 * var(--s));
+  background-position: 50% 100%;
   width: var(--s);
 }
 .flag-intersex .overlay {
