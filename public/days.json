@@ -5,6 +5,10 @@
                 "day": 6,
                 "month": 4
             },
+			"aids": {
+				"day": 1,
+				"month": 12
+			},
             "barlo": {
                 "day": 2,
                 "month": 11
@@ -66,7 +70,10 @@
         "months": {
             "pride_month": {
                 "month": 6
-            }
+            },
+			"lgbt_history": {
+				"month": 10
+			}
         },
         "weeks": {
             "ace_week": {
@@ -101,6 +108,11 @@
             "brand": "flag-ace",
             "name": "Ace Week"
         },
+		"aids": {
+			"blurb": "Today is <a href='https://worldaidsday.org/'>World AIDS Day</a>",
+			"brand": "alignment aids",
+			"name": "World AIDS Day"
+		},
         "barlo": {
             "blurb": "<div title='KAAAAAAAAAAANNN' style='font-variant: normal;'>(*^ω^*)</div>",
             "brand": "flag-barlo",
@@ -146,6 +158,11 @@
             "brand": "flag-lesbian",
             "name": "Lesbian Visibility Week"
         },
+		"lgbt_history": {
+			"blurb": "Celebrating <a href='https://lgbthistorymonth.com/'>LGBT History Month</a>",
+			"brand": "flag-progress",
+			"name": "LGBT History Month"
+		},
         "nb": {
             "blurb": "Today is <a href='https://www.manygendersonevoice.org/non-binary-peoples-day.html'>Non-Binary People's Day</a>",
             "brand": "flag-non-binary",
