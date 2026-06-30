@@ -18,6 +18,7 @@
         "/images/prom/mdRect/mandr.png",
         "/images/prom/mdRect/mucha.png",
         "/images/prom/mdRect/my-husband-is-dead.png",
+        "/images/prom/mdRect/no-biths.png",
         "/images/prom/mdRect/peragus.gif",
         "/images/prom/mdRect/pretzels.png",
         "/images/prom/mdRect/rakghoul-disease.png",
@@ -30,11 +31,14 @@
         "/images/prom/mdRect/re-misc2.png",
         "/images/prom/mdRect/re-taris1.png",
         "/images/prom/mdRect/space-tatooine.png",
+        "/images/prom/mdRect/terlyn.png",
+        "/images/prom/mdRect/yc-lorso.png",
         "/images/prom/mdRect/yub-nub.png"
     ],
     "mobileBnr": [
         "/images/prom/mobileBnr/czerka.png",
         "/images/prom/mobileBnr/esk-harmony.png",
+        "/images/prom/mobileBnr/hungry-sith.png",
         "/images/prom/mobileBnr/mandr.png",
         "/images/prom/mobileBnr/re-public.png",
         "/images/prom/mobileBnr/utinni.png"
