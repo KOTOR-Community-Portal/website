@@ -1,6 +1,10 @@
 {
     "conditions": {
         "days": {
+            "emoji": {
+                "day": 17,
+                "month": 7
+            },
             "jizz": {
                 "day": 29,
                 "month": 12
@@ -24,6 +28,12 @@
         }
     },
     "data": {
+        "emoji": {
+            "alt": "Icon of a calendar showing July 17th",
+            "img": "images/icons/july17.svg",
+            "label": "Calendar",
+            "url": "https://worldemojiday.com/"
+        },
         "jizz": {
             "alt": "Icon of a jizz instrument",
             "img": "/images/icons/jizz.png",

@@ -79,6 +79,9 @@
     #5bcefa 0 100%
   );
 }
+.grayscale {
+  filter: grayscale(100%);
+}
 
 .alignment .overlay {
   --s: max(calc(0.95 * var(--brand-h-s)), 0.75 * var(--h));

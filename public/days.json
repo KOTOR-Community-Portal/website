@@ -21,6 +21,10 @@
                 "day": 11,
                 "month": 10
             },
+            "grayscale": {
+                "day": 1,
+                "month": 7
+            },
             "idahobit": {
                 "day": 17,
                 "month": 5
@@ -132,6 +136,11 @@
             "blurb": "This week is <a href='https://www.grlgbtqhealthcareconsortium.org/significantdates/genderfluid-visibility-week-x3mla'>Genderfluid Visibility Week</a>",
             "brand": "flag-genderfluid",
             "name": "Genderfluid Visibility Week"
+        },
+        "grayscale": {
+            "blurb": "",
+            "brand": "alignment grayscale",
+            "name": ""
         },
         "idahobit": {
             "blurb": "Today is <a href='https://may17.org'>IDAHOBIT</a></span>",
