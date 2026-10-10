@@ -4,7 +4,7 @@ function ArticleFeed() {
   return Layout({
     main: () => {
       const articles = [...utils.fs.readdir(page.tokens.feed, false)]
-        .sort((a, b) => a < b)
+        .sort((a, b) => (b || "").localeCompare(a))
         .map((x) => htmlUtils.parse(Markdown(x, { ids: true }), (parent) => {
             const h1 = parent.querySelector("h1");
             const name = /(?:.*[/\\])?(.*)\.[^.]*/.exec(x)[1];

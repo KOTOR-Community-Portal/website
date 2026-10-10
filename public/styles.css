@@ -634,6 +634,10 @@ button:not(:disabled) {
   color: var(--text);
 }
 
+.main article > div {
+  padding-left: 32px;
+}
+
 .main article {
   width: 100%;
 }
